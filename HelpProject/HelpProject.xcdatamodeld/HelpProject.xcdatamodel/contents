@@ -7,6 +7,10 @@
             <fetchRequest name="fetchedPropertyFetchRequest" entity="Categorie"/>
         </fetchedProperty>
     </entity>
+    <entity name="Message" syncable="YES">
+        <attribute name="idMsg" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="msgContenu" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <entity name="Person" syncable="YES">
         <attribute name="address" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="idPerson" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
@@ -28,5 +32,6 @@
         <element name="Person" positionX="-63" positionY="-18" width="128" height="120"/>
         <element name="Categorie" positionX="-54" positionY="18" width="128" height="104"/>
         <element name="Service" positionX="-36" positionY="45" width="128" height="165"/>
+        <element name="Message" positionX="-18" positionY="99" width="128" height="75"/>
     </elements>
 </model>
