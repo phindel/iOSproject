@@ -21,7 +21,7 @@
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DPS-SD-rp9">
                                 <rect key="frame" x="20" y="42" width="560" height="44"/>
                                 <items>
-                                    <navigationItem title="Title" id="55N-CQ-zTG"/>
+                                    <navigationItem title="Help Us!" id="55N-CQ-zTG"/>
                                 </items>
                             </navigationBar>
                         </subviews>
