@@ -15,6 +15,7 @@
 		F266E9171C89DCD600F7AC83 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F266E9151C89DCD600F7AC83 /* LaunchScreen.storyboard */; };
 		F266E9221C89DCD600F7AC83 /* HelpProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F266E9211C89DCD600F7AC83 /* HelpProjectTests.swift */; };
 		F266E92D1C89DCD600F7AC83 /* HelpProjectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F266E92C1C89DCD600F7AC83 /* HelpProjectUITests.swift */; };
+		F28D80791C8F494A00DF0D4E /* ListeCategorieTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28D80781C8F494A00DF0D4E /* ListeCategorieTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		F266E9281C89DCD600F7AC83 /* HelpProjectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HelpProjectUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F266E92C1C89DCD600F7AC83 /* HelpProjectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpProjectUITests.swift; sourceTree = "<group>"; };
 		F266E92E1C89DCD700F7AC83 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F28D80781C8F494A00DF0D4E /* ListeCategorieTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListeCategorieTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				F266E9151C89DCD600F7AC83 /* LaunchScreen.storyboard */,
 				F266E9181C89DCD600F7AC83 /* Info.plist */,
 				F266E9101C89DCD600F7AC83 /* HelpProject.xcdatamodeld */,
+				F28D80781C8F494A00DF0D4E /* ListeCategorieTableViewController.swift */,
 			);
 			path = HelpProject;
 			sourceTree = "<group>";
@@ -260,6 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F266E90C1C89DCD600F7AC83 /* ViewController.swift in Sources */,
+				F28D80791C8F494A00DF0D4E /* ListeCategorieTableViewController.swift in Sources */,
 				F266E9121C89DCD600F7AC83 /* HelpProject.xcdatamodeld in Sources */,
 				F266E90A1C89DCD600F7AC83 /* AppDelegate.swift in Sources */,
 			);
@@ -486,6 +490,7 @@
 				F266E9331C89DCD700F7AC83 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F266E9341C89DCD700F7AC83 /* Build configuration list for PBXNativeTarget "HelpProjectTests" */ = {
 			isa = XCConfigurationList;
@@ -494,6 +499,7 @@
 				F266E9361C89DCD700F7AC83 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F266E9371C89DCD700F7AC83 /* Build configuration list for PBXNativeTarget "HelpProjectUITests" */ = {
 			isa = XCConfigurationList;
@@ -502,6 +508,7 @@
 				F266E9391C89DCD700F7AC83 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
