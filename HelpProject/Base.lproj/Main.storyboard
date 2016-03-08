@@ -23,18 +23,17 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="42a-xQ-4S6">
-                                            <rect key="frame" x="15" y="0.0" width="97" height="30"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <textInputTraits key="textInputTraits"/>
-                                        </textField>
                                         <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="q0u-bT-nNh">
                                             <rect key="frame" x="-111" y="-7" width="600" height="44"/>
                                             <items>
-                                                <navigationItem title="Title" id="2KE-KB-SgU">
-                                                    <barButtonItem key="rightBarButtonItem" systemItem="add" id="dan-pg-kcx"/>
-                                                </navigationItem>
+                                                <navigationItem title="Title" id="2KE-KB-SgU"/>
                                             </items>
+                                            <variation key="widthClass=compact" fixedFrame="YES">
+                                                <rect key="frame" x="28" y="0.0" width="358" height="44"/>
+                                            </variation>
+                                            <variation key="heightClass=compact-widthClass=compact" fixedFrame="YES">
+                                                <rect key="frame" x="27" y="0.0" width="358" height="44"/>
+                                            </variation>
                                         </navigationBar>
                                     </subviews>
                                 </tableViewCellContentView>
@@ -45,7 +44,11 @@
                             <outlet property="delegate" destination="3lz-OC-cgZ" id="SaB-v2-G2h"/>
                         </connections>
                     </tableView>
+                    <toolbarItems>
+                        <barButtonItem systemItem="fastForward" id="dan-pg-kcx"/>
+                    </toolbarItems>
                     <navigationItem key="navigationItem" id="A4Y-Ma-WNy"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="je3-Mq-8Yt">
                         <autoresizingMask key="autoresizingMask"/>
                         <attributedString key="attributedTitle"/>
