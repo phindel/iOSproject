@@ -6,10 +6,10 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Table View Controller-->
+        <!--Liste des categories-->
         <scene sceneID="Zzm-Vm-yhe">
             <objects>
-                <tableViewController id="3lz-OC-cgZ" sceneMemberID="viewController">
+                <tableViewController title="Liste des categories" id="3lz-OC-cgZ" customClass="ListeCategorieTableViewController" customModule="HelpProject" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="OZ0-ng-X8W">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -23,12 +23,25 @@
                             </connections>
                         </button>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="hKs-QJ-K1L">
-                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="typeGen" id="hKs-QJ-K1L">
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hKs-QJ-K1L" id="lXg-gG-VXU">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="42a-xQ-4S6">
+                                            <rect key="frame" x="15" y="0.0" width="97" height="30"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                        </textField>
+                                        <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="q0u-bT-nNh">
+                                            <rect key="frame" x="-111" y="-7" width="600" height="44"/>
+                                            <items>
+                                                <navigationItem title="Title" id="2KE-KB-SgU"/>
+                                            </items>
+                                        </navigationBar>
+                                    </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
@@ -37,9 +50,17 @@
                             <outlet property="delegate" destination="3lz-OC-cgZ" id="SaB-v2-G2h"/>
                         </connections>
                     </tableView>
-                    <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="wnO-PW-AQh">
+                    <navigationItem key="navigationItem" id="A4Y-Ma-WNy"/>
+                    <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="je3-Mq-8Yt">
                         <autoresizingMask key="autoresizingMask"/>
+                        <attributedString key="attributedTitle"/>
+                        <connections>
+                            <action selector="refresh:" destination="3lz-OC-cgZ" eventType="valueChanged" id="fgU-fa-B2c"/>
+                        </connections>
                     </refreshControl>
+                    <connections>
+                        <segue destination="MPl-dY-rD7" kind="show" identifier="segueListeParCat" id="Oih-zT-aDb"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t8l-Uj-tYu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -278,6 +299,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YC7-AA-HG7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="660" y="1131"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="NH2-bD-K14">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="9na-gy-vCt" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="RtO-sB-imj">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="3lz-OC-cgZ" kind="relationship" relationship="rootViewController" id="PDb-ST-ITT"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8zM-hc-Scr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="78" y="370"/>
         </scene>
     </scenes>
 </document>
