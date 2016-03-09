@@ -10,8 +10,12 @@ import UIKit
 import CoreData
 
 class ListeCategorieTableViewController: UITableViewController {
-
+    
     var table1=["Ayy","fdg","V"]
+    @IBAction func remplirBDD(sender: AnyObject) {
+        table1[1]="rb"
+        self.tableView.reloadData()
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         
