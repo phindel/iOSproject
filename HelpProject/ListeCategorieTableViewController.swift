@@ -11,9 +11,29 @@ import CoreData
 
 class ListeCategorieTableViewController: UITableViewController {
     
-    var table1=["Ayy","fdg","V"]
+    var table1=["Ayy","fdg","V","","","8"]
     @IBAction func remplirBDD(sender: AnyObject) {
         table1[1]="rb"
+        let appDel:AppDelegate=UIApplication.sharedApplication().delegate as! AppDelegate
+        let contexte:NSManagedObjectContext=appDel.managedObjectContext
+        let newCat=NSEntityDescription.insertNewObjectForEntityForName("Categorie", inManagedObjectContext: contexte)
+        newCat.setValue(1, forKey: "idCategorie")
+        newCat.setValue("cat 1", forKey: "nomCategorie")
+        let newCat2=NSEntityDescription.insertNewObjectForEntityForName("Categorie", inManagedObjectContext: contexte)
+        newCat2.setValue(2, forKey: "idCategorie")
+        newCat2.setValue("cat 2", forKey: "nomCategorie")
+        let newCat3=NSEntityDescription.insertNewObjectForEntityForName("Categorie", inManagedObjectContext: contexte)
+        newCat3.setValue(3, forKey: "idCategorie")
+        newCat3.setValue("cat 3", forKey: "nomCategorie")
+        
+        do{
+            try contexte.save()
+            table1[0]="BDD remplie"
+        }catch{
+            print("Probleme lors du peuplement de la BDD")
+            table1[0]="BDD pas remplie"
+        }
+        
         self.tableView.reloadData()
     }
     override func viewDidLoad() {
@@ -32,20 +52,27 @@ class ListeCategorieTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         //return the number of rows
-        return 3
+        return table1.count
     }
     func rafraichir(){
         //table1[1]+="j"
         let appDel:AppDelegate=UIApplication.sharedApplication().delegate as! AppDelegate
         let contexte:NSManagedObjectContext=appDel.managedObjectContext
-        let req=NSFetchRequest(entityName: "Personne")
+        let req=NSFetchRequest(entityName: "Categorie")
         req.returnsObjectsAsFaults=false
-        
+        print("rafraichir()")
+        table1[0]="rafraichir()"
+        var c=0
         do{
             let res=try contexte.executeFetchRequest(req)
             if res.count>0{
                 for r in res as! [NSManagedObject]{
-                    print(r.valueForKey("nom")!)
+                    //print(r.valueForKey("nomCategorie")!)
+                    if c<table1.count{
+                        table1[c]=((r.valueForKey("nomCategorie")!) as? String)!
+                    }
+                    
+                    c+=1//swift ne supporte pas c++
                     
                 }
             }
@@ -58,7 +85,7 @@ class ListeCategorieTableViewController: UITableViewController {
     
     @IBAction func refresh(sender: UIRefreshControl) {
         refreshControl?.attributedTitle=NSAttributedString(string:"yo man")
-        //rafraichir()
+        rafraichir()
         table1[1]+="j"
         self.tableView.reloadData()
         refreshControl?.endRefreshing()
