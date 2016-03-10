@@ -8,8 +8,8 @@
 
 import UIKit
 
-class ListeParCategorieController: UITableViewController {
-//g
+class ListeParCategorieController: BDDTableViewController {
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -19,23 +19,17 @@ class ListeParCategorieController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    var listeDesDemandes=false
     var categorie=""
     // MARK: - Table view data source
 
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 1
-    }
-
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 1
-    }
+    
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         //let cell = tableView.dequeueReusableCellWithIdentifier("typeGen", forIndexPath: indexPath)
         let cell=UITableViewCell(style: .Value1, reuseIdentifier: "typeDemande")
@@ -45,6 +39,10 @@ class ListeParCategorieController: UITableViewController {
         
         return cell
     }
+    /*let bdcache=BDDCache()
+    func rafraichir(){
+        bdcache.rafraichir()
+    }*/
     /*
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)

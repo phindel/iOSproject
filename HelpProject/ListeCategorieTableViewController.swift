@@ -5,18 +5,20 @@
 //  Created by tp on 08/03/2016.
 //  Copyright © 2016 del_leo. All rights reserved.
 //
-
 import UIKit
 import CoreData
 
-class ListeCategorieTableViewController: UITableViewController {
+
+class ListeCategorieTableViewController: BDDTableViewController {
+    
+
     
     
     //var table1=["Ayy","fdg","V","","","8"]
-    var tableCategories=["","","","","","","","","","","","","","","","","",""]
+    //var tableCategories=["","","","","","","","","","","","","","","","","",""]
     
     @IBAction func remplirBDD(sender: AnyObject) {
-        tableCategories[1]="rb"
+        //tableCategories[1]="rb"
         let appDel:AppDelegate=UIApplication.sharedApplication().delegate as! AppDelegate
         let contexte:NSManagedObjectContext=appDel.managedObjectContext
         let newCat=NSEntityDescription.insertNewObjectForEntityForName("Categorie", inManagedObjectContext: contexte)
@@ -34,13 +36,15 @@ class ListeCategorieTableViewController: UITableViewController {
             
         }catch{
             print("Probleme lors du peuplement de la BDD")
-            tableCategories[0]="BDD pas remplie"
+            tableCacheBDD[0]="BDD pas remplie"
         }
         
         self.tableView.reloadData()
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        classeBDD="Categorie"
+        champAAfficherBDD="nomCategorie"
         rafraichir()
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -48,42 +52,11 @@ class ListeCategorieTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        //return the number of sections
-        return 1
-    }
     
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        //return the number of rows
-        return tableCategories.count
-    }
-    
+    /*let bdcache=BDDCache()
     func rafraichir(){
-        
-        let appDel:AppDelegate=UIApplication.sharedApplication().delegate as! AppDelegate
-        let contexte:NSManagedObjectContext=appDel.managedObjectContext
-        let req=NSFetchRequest(entityName: "Categorie")
-        req.returnsObjectsAsFaults=false
-        print("rafraichir()")
-        tableCategories[0]="rafraichir()"
-        var c=0
-        do{
-            let res=try contexte.executeFetchRequest(req)
-            if res.count>0{
-                for r in res as! [NSManagedObject]{
-                    //print(r.valueForKey("nomCategorie")!)
-                    if c<tableCategories.count{
-                        tableCategories[c]=((r.valueForKey("nomCategorie")!) as? String)!
-                    }
-                    
-                    c+=1//swift ne supporte pas c++
-                    
-                }
-            }
-        }catch{
-            print("Echec du fetch!")
-        }
-    }
+        bdcache.rafraichir()
+    }*/
     
     
     
@@ -105,7 +78,7 @@ class ListeCategorieTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         //let cell = tableView.dequeueReusableCellWithIdentifier("typeGen", forIndexPath: indexPath)
         let cell=UITableViewCell(style: .Value1, reuseIdentifier: "typeGen")
-        cell.textLabel!.text=tableCategories[indexPath.item]
+        cell.textLabel!.text=tableCacheBDD[indexPath.item]
         //cell.detailTextLabel!.text=tableCategories[indexPath.item]+" lol"
         cell.imageView!.image=UIImage(named: "rond.png")
         
@@ -123,7 +96,7 @@ class ListeCategorieTableViewController: UITableViewController {
         if(segue.identifier=="segueListeParCat"){
             if let indice = tableView.indexPathsForSelectedRows{
                 let dvc=segue.destinationViewController as! ListeParCategorieController
-                dvc.categorie=tableCategories[(indice.first?.item)!]
+                dvc.categorie=tableCacheBDD[(indice.first?.item)!]
             }
         }
     }
