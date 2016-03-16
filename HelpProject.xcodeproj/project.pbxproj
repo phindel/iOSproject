@@ -18,6 +18,7 @@
 		F266E92D1C89DCD600F7AC83 /* HelpProjectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F266E92C1C89DCD600F7AC83 /* HelpProjectUITests.swift */; };
 		F28D80791C8F494A00DF0D4E /* ListeCategorieTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28D80781C8F494A00DF0D4E /* ListeCategorieTableViewController.swift */; };
 		F28D807B1C8F53CE00DF0D4E /* ListeParCategorieController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28D807A1C8F53CE00DF0D4E /* ListeParCategorieController.swift */; };
+		F2CF5BF51C99C7C600DBFDF6 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2CF5BF41C99C7C600DBFDF6 /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		F266E92E1C89DCD700F7AC83 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F28D80781C8F494A00DF0D4E /* ListeCategorieTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListeCategorieTableViewController.swift; sourceTree = "<group>"; };
 		F28D807A1C8F53CE00DF0D4E /* ListeParCategorieController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListeParCategorieController.swift; sourceTree = "<group>"; };
+		F2CF5BF41C99C7C600DBFDF6 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2CF5BF51C99C7C600DBFDF6 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +88,7 @@
 		F266E8FD1C89DCD600F7AC83 = {
 			isa = PBXGroup;
 			children = (
+				F2CF5BF41C99C7C600DBFDF6 /* MapKit.framework */,
 				F266E9081C89DCD600F7AC83 /* HelpProject */,
 				F266E9201C89DCD600F7AC83 /* HelpProjectTests */,
 				F266E92B1C89DCD600F7AC83 /* HelpProjectUITests */,
