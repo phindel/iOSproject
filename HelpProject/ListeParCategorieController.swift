@@ -12,7 +12,9 @@ class ListeParCategorieController: BDDTableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        classeBDD="Categorie"
+        champAAfficherBDD="nomCategorie"
+        rafraichir()
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
