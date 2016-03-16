@@ -10,16 +10,30 @@ import UIKit
 import CoreData
 import MapKit
 
-class OffreDemandeController: BDDTableViewController, MKMapViewDelegate {
+class OffreDemandeController: UIViewController, MKMapViewDelegate {
 
     @IBOutlet weak var localisationOnMap: MKMapView!
     
+    @IBOutlet weak var libelleA_O: UILabel!
+    
+    @IBOutlet weak var datePubA_O: UILabel!
+    
+    
+    
+    @IBOutlet weak var descriptionA_O: UILabel!
+    
+    
+    @IBOutlet weak var budgetA_O: UILabel!
+    
+    
+    @IBAction func entrerContact(sender: AnyObject, forEvent event: UIEvent) {
         
+    }
         override func viewDidLoad() {
             super.viewDidLoad()
-            classeBDD="Categorie"
+            /*classeBDD="Categorie"
             champAAfficherBDD="nomCategorie"
-            rafraichir()
+            rafraichir()*/
             // Uncomment the following line to preserve selection between presentations
             // self.clearsSelectionOnViewWillAppear = false
             
@@ -37,7 +51,7 @@ class OffreDemandeController: BDDTableViewController, MKMapViewDelegate {
         
         
         
-        override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+       /* override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
             //let cell = tableView.dequeueReusableCellWithIdentifier("typeGen", forIndexPath: indexPath)
             let cell=UITableViewCell(style: .Value1, reuseIdentifier: "typeDemande")
             cell.textLabel!.text=categorie
@@ -45,5 +59,5 @@ class OffreDemandeController: BDDTableViewController, MKMapViewDelegate {
             cell.imageView!.image=UIImage(named: "rond.png")
             
             return cell
-}
+    }*/
 }
