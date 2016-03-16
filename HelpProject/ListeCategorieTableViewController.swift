@@ -67,9 +67,7 @@ class ListeCategorieTableViewController: BDDTableViewController {
         self.tableView.reloadData()
         refreshControl?.endRefreshing()
     }
-    func refresh2(sender: UIRefreshControl) {
-        
-    }
+    
     
     var t=0
     

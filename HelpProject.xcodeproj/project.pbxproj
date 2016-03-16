@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B33310701C99D3D3009298E2 /* OffreDemandeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B333106F1C99D3D3009298E2 /* OffreDemandeController.swift */; };
 		B3A66BBC1C91F80A003ED901 /* BDDCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A66BBB1C91F80A003ED901 /* BDDCache.swift */; };
 		B3A66BBE1C91FD85003ED901 /* BDDTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A66BBD1C91FD85003ED901 /* BDDTableViewController.swift */; };
 		F266E90A1C89DCD600F7AC83 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F266E9091C89DCD600F7AC83 /* AppDelegate.swift */; };
@@ -38,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B333106F1C99D3D3009298E2 /* OffreDemandeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OffreDemandeController.swift; sourceTree = "<group>"; };
 		B3A66BBB1C91F80A003ED901 /* BDDCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BDDCache.swift; sourceTree = "<group>"; };
 		B3A66BBD1C91FD85003ED901 /* BDDTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BDDTableViewController.swift; sourceTree = "<group>"; };
 		F266E9061C89DCD600F7AC83 /* HelpProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HelpProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -115,6 +117,7 @@
 				F266E9181C89DCD600F7AC83 /* Info.plist */,
 				F266E9101C89DCD600F7AC83 /* HelpProject.xcdatamodeld */,
 				B3A66BBD1C91FD85003ED901 /* BDDTableViewController.swift */,
+				B333106F1C99D3D3009298E2 /* OffreDemandeController.swift */,
 			);
 			path = HelpProject;
 			sourceTree = "<group>";
@@ -271,6 +274,7 @@
 				F28D80791C8F494A00DF0D4E /* ListeCategorieTableViewController.swift in Sources */,
 				F28D807B1C8F53CE00DF0D4E /* ListeParCategorieController.swift in Sources */,
 				F266E9121C89DCD600F7AC83 /* HelpProject.xcdatamodeld in Sources */,
+				B33310701C99D3D3009298E2 /* OffreDemandeController.swift in Sources */,
 				B3A66BBC1C91F80A003ED901 /* BDDCache.swift in Sources */,
 				B3A66BBE1C91FD85003ED901 /* BDDTableViewController.swift in Sources */,
 				F266E90A1C89DCD600F7AC83 /* AppDelegate.swift in Sources */,
