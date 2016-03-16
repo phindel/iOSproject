@@ -108,7 +108,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zy2-l0-DAe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2262" y="136"/>
+            <point key="canvasLocation" x="1905" y="86"/>
         </scene>
         <!--Inscription-->
         <scene sceneID="Wuq-zv-ezY">
@@ -574,7 +574,7 @@
         <!--DetailsOfferOrAnnonce-->
         <scene sceneID="AV0-AK-xzX">
             <objects>
-                <viewController title="DetailsOfferOrAnnonce" id="AE2-BX-IZU" sceneMemberID="viewController">
+                <viewController title="DetailsOfferOrAnnonce" id="AE2-BX-IZU" customClass="OffreDemandeController" customModule="HelpProject" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="5IF-xk-Jn6"/>
                         <viewControllerLayoutGuide type="bottom" id="tLv-Sc-g1r"/>
@@ -654,10 +654,6 @@
                                     </mask>
                                 </variation>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wBi-Tx-NGT">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <state key="normal" title="Contacter M. ..."/>
-                            </button>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="d9Z-lh-wHc">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                             </mapView>
@@ -667,6 +663,10 @@
                                     <navigationItem title="Title" id="sN7-GP-SMU"/>
                                 </items>
                             </navigationBar>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wBi-Tx-NGT">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Contacter M. ..."/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -715,9 +715,9 @@
                                 <exclude reference="pfl-Yd-jFM"/>
                                 <exclude reference="11E-GF-NkY"/>
                                 <exclude reference="7i3-Ez-4W5"/>
-                                <exclude reference="wBi-Tx-NGT"/>
                                 <exclude reference="d9Z-lh-wHc"/>
                                 <exclude reference="FvN-K1-Zu8"/>
+                                <exclude reference="wBi-Tx-NGT"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="mws-o0-hbD"/>
@@ -766,9 +766,9 @@
                                 <include reference="pfl-Yd-jFM"/>
                                 <include reference="11E-GF-NkY"/>
                                 <include reference="7i3-Ez-4W5"/>
-                                <include reference="wBi-Tx-NGT"/>
                                 <include reference="d9Z-lh-wHc"/>
                                 <include reference="FvN-K1-Zu8"/>
+                                <include reference="wBi-Tx-NGT"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="mws-o0-hbD"/>
@@ -809,10 +809,13 @@
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="localisationOnMap" destination="d9Z-lh-wHc" id="IaO-hc-GiB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W0B-Zn-VDC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2290.5" y="804"/>
+            <point key="canvasLocation" x="2599.5" y="299"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="NH2-bD-K14">

@@ -11,6 +11,7 @@ import CoreData
 
 class OffreDemandeController: BDDTableViewController {
 
+    @IBOutlet weak var localisationOnMap: MKMapView!
     
         
         override func viewDidLoad() {
