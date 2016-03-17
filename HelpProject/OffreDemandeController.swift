@@ -29,17 +29,18 @@ class OffreDemandeController: UIViewController, MKMapViewDelegate {
     @IBAction func entrerContact(sender: AnyObject, forEvent event: UIEvent) {
         
     }
-        override func viewDidLoad() {
+        /* override func viewDidLoad() {
             super.viewDidLoad()
-            /*classeBDD="Categorie"
+            classeBDD="Categorie"
             champAAfficherBDD="nomCategorie"
-            rafraichir()*/
+            rafraichir()
             // Uncomment the following line to preserve selection between presentations
             // self.clearsSelectionOnViewWillAppear = false
             
             // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
             // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         }
+*/
         
         override func didReceiveMemoryWarning() {
             super.didReceiveMemoryWarning()
