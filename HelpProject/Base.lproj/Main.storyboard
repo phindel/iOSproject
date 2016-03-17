@@ -455,10 +455,6 @@
                                 <nil key="highlightedColor"/>
                                 <color key="shadowColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5gB-XN-4Jq">
-                                <rect key="frame" x="104" y="19" width="46" height="30"/>
-                                <state key="normal" title="Connexion"/>
-                            </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="login" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="whM-j3-wVh">
                                 <rect key="frame" x="-25" y="-30" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
@@ -473,8 +469,12 @@
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <state key="normal" title="S'inscrire"/>
                                 <connections>
-                                    <segue destination="T2h-fR-cNp" kind="show" id="qdc-uV-Add"/>
+                                    <segue destination="T2h-fR-cNp" kind="show" identifier="afficherInscription" id="qdc-uV-Add"/>
                                 </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5gB-XN-4Jq">
+                                <rect key="frame" x="104" y="19" width="46" height="30"/>
+                                <state key="normal" title="Connexion"/>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -510,10 +510,10 @@
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="APG-C0-wpC"/>
-                                <exclude reference="5gB-XN-4Jq"/>
                                 <exclude reference="whM-j3-wVh"/>
                                 <exclude reference="vsC-h5-qk7"/>
                                 <exclude reference="s89-an-wTc"/>
+                                <exclude reference="5gB-XN-4Jq"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="swq-GM-WmB"/>
@@ -548,10 +548,10 @@
                         <variation key="widthClass=compact">
                             <mask key="subviews">
                                 <include reference="APG-C0-wpC"/>
-                                <include reference="5gB-XN-4Jq"/>
                                 <include reference="whM-j3-wVh"/>
                                 <include reference="vsC-h5-qk7"/>
                                 <include reference="s89-an-wTc"/>
+                                <include reference="5gB-XN-4Jq"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="swq-GM-WmB"/>
@@ -587,7 +587,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YC7-AA-HG7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="696" y="804"/>
+            <point key="canvasLocation" x="636" y="1062"/>
         </scene>
         <!--DetailsOfferOrAnnonce-->
         <scene sceneID="AV0-AK-xzX">
@@ -641,12 +641,6 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date pub" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="11E-GF-NkY">
-                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="d9Z-lh-wHc">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                             </mapView>
@@ -687,6 +681,12 @@
                                         <include reference="tm0-Z2-7Xv"/>
                                     </mask>
                                 </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date pub" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="11E-GF-NkY">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -733,12 +733,12 @@
                                 <exclude reference="YJn-Ul-tVn"/>
                                 <exclude reference="maz-mr-JMS"/>
                                 <exclude reference="pfl-Yd-jFM"/>
-                                <exclude reference="11E-GF-NkY"/>
                                 <exclude reference="d9Z-lh-wHc"/>
                                 <exclude reference="FvN-K1-Zu8"/>
                                 <exclude reference="wBi-Tx-NGT"/>
                                 <exclude reference="VdV-CL-10a"/>
                                 <exclude reference="7i3-Ez-4W5"/>
+                                <exclude reference="11E-GF-NkY"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="mws-o0-hbD"/>
@@ -784,12 +784,12 @@
                                 <include reference="YJn-Ul-tVn"/>
                                 <include reference="maz-mr-JMS"/>
                                 <include reference="pfl-Yd-jFM"/>
-                                <include reference="11E-GF-NkY"/>
                                 <include reference="d9Z-lh-wHc"/>
                                 <include reference="FvN-K1-Zu8"/>
                                 <include reference="wBi-Tx-NGT"/>
                                 <include reference="VdV-CL-10a"/>
                                 <include reference="7i3-Ez-4W5"/>
+                                <include reference="11E-GF-NkY"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="mws-o0-hbD"/>
@@ -832,7 +832,7 @@
                     </view>
                     <connections>
                         <outlet property="budgetA_O" destination="7i3-Ez-4W5" id="Jxb-xu-AWZ"/>
-                        <outlet property="datePub" destination="11E-GF-NkY" id="rB6-Na-94P"/>
+                        <outlet property="datePubA_O" destination="11E-GF-NkY" id="WKc-9O-KFk"/>
                         <outlet property="descriptionA_O" destination="VdV-CL-10a" id="lfT-9v-Nv4"/>
                         <outlet property="libelleA_O" destination="maz-mr-JMS" id="kd7-ce-OJL"/>
                         <outlet property="localisationOnMap" destination="d9Z-lh-wHc" id="IaO-hc-GiB"/>

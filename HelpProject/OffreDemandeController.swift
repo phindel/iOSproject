@@ -16,8 +16,8 @@ class OffreDemandeController: UIViewController, MKMapViewDelegate {
     
     @IBOutlet weak var libelleA_O: UILabel!
     
-    @IBOutlet weak var datePubA_O: UILabel!
     
+    @IBOutlet weak var datePubA_O: UILabel!
     
     
     @IBOutlet weak var descriptionA_O: UILabel!
