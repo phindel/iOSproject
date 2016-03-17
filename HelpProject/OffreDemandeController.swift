@@ -10,7 +10,7 @@ import UIKit
 import CoreData
 import MapKit
 
-class OffreDemandeController: UIViewController, MKMapViewDelegate {
+class OffreDemandeController: UIViewController, MKMapViewDelegate{
 
     @IBOutlet weak var localisationOnMap: MKMapView!
     
@@ -25,23 +25,50 @@ class OffreDemandeController: UIViewController, MKMapViewDelegate {
     
     @IBOutlet weak var budgetA_O: UILabel!
     
+    var services = [NSManagedObject]()
     
     @IBAction func entrerContact(sender: AnyObject, forEvent event: UIEvent) {
         
     }
-        /* override func viewDidLoad() {
+    override func viewDidLoad() {
             super.viewDidLoad()
-            classeBDD="Categorie"
-            champAAfficherBDD="nomCategorie"
-            rafraichir()
-            // Uncomment the following line to preserve selection between presentations
-            // self.clearsSelectionOnViewWillAppear = false
-            
-            // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-            // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-        }
-*/
+       
         
+            datePubA_O.text = " "
+            libelleA_O.text = " "
+            budgetA_O.text = " "
+            descriptionA_O.text = " "
+        
+        }
+    
+    func getServiceInfo(id : integer_t) {
+        
+        
+        
+        }
+
+        func printInfoService()
+        {
+            
+            
+            
+        }
+    
+    
+    func tableView( tableView: UITableView, numBerOfRowsInSection section : Int) ->Int {
+        return services.count
+    }
+    
+    func listService ( tableView: UITableView, cellForRowAtIndexPath indexPath : NSIndexPath) ->UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("idService")
+        
+        let service = services[indexPath.row]
+        
+        cell!.textLabel!.text = service.valueForKey("idService") as? String
+        
+        return cell!
+    }
+    
         override func didReceiveMemoryWarning() {
             super.didReceiveMemoryWarning()
             // Dispose of any resources that can be recreated.

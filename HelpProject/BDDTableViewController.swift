@@ -40,7 +40,7 @@ class BDDTableViewController: UITableViewController {
                         tableCacheBDD[c]=((r.valueForKey(champAAfficherBDD)!) as? String)!
                     }
                     
-                    c+=1//swift ne supporte pas c++
+                    c+=1 //swift ne supporte pas c++
                     
                 }
             }
