@@ -106,6 +106,9 @@
                             <outlet property="delegate" destination="MPl-dY-rD7" id="1L7-1m-Xvw"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <segue destination="AE2-BX-IZU" kind="show" identifier="afficherDetailsOfferOrAnnonce" id="znx-4v-T4m"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zy2-l0-DAe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -872,7 +875,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W0B-Zn-VDC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2028" y="775"/>
+            <point key="canvasLocation" x="2238" y="781"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="NH2-bD-K14">
@@ -894,6 +897,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="fhE-mR-LmE"/>
+        <segue reference="PDb-ST-ITT"/>
+        <segue reference="znx-4v-T4m"/>
     </inferredMetricsTieBreakers>
 </document>

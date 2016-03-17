@@ -38,16 +38,15 @@ class ListeCategorieTableViewController: BDDTableViewController {
             
         }catch{
             print("Probleme lors du peuplement de la BDD")
-            tableCacheBDD[0]="BDD pas remplie"
+            //tableCacheBDD[0]="BDD pas remplie"
         }
         
         self.tableView.reloadData()
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        classeBDD="Categorie"
-        champAAfficherBDD="nomCategorie"
-        rafraichir()
+        initialiser("Categorie", champAAfficherBDD: "nomCategorie")
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
         
@@ -78,7 +77,7 @@ class ListeCategorieTableViewController: BDDTableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         //let cell = tableView.dequeueReusableCellWithIdentifier("typeGen", forIndexPath: indexPath)
         let cell=UITableViewCell(style: .Value1, reuseIdentifier: "typeGen")
-        cell.textLabel!.text=tableCacheBDD[indexPath.item]
+        cell.textLabel!.text=tableCacheBDD[indexPath.item] as! String as String!
         //cell.detailTextLabel!.text=tableCategories[indexPath.item]+" lol"
         cell.imageView!.image=UIImage(named: "rond.png")
         
@@ -96,7 +95,7 @@ class ListeCategorieTableViewController: BDDTableViewController {
         if(segue.identifier=="segueListeParCat"){
             if let indice = tableView.indexPathsForSelectedRows{
                 let dvc=segue.destinationViewController as! ListeParCategorieController
-                dvc.categorie=tableCacheBDD[(indice.first?.item)!]
+                dvc.categorie=tableCacheBDD[(indice.first?.item)!] as! String as String!
                 dvc.identification=identification
             }
         }
