@@ -12,6 +12,7 @@ import CoreData
 class ListeCategorieTableViewController: BDDTableViewController {
     
 
+    @IBOutlet weak var boutonConnection: UIButton!
     
     
     //var table1=["Ayy","fdg","V","","","8"]
@@ -96,6 +97,7 @@ class ListeCategorieTableViewController: BDDTableViewController {
             if let indice = tableView.indexPathsForSelectedRows{
                 let dvc=segue.destinationViewController as! ListeParCategorieController
                 dvc.categorie=tableCacheBDD[(indice.first?.item)!]
+                dvc.identification=identification
             }
         }
     }

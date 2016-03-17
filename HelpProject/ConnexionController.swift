@@ -14,7 +14,8 @@ class ConnexionController: UIViewController {
     
     @IBOutlet weak var entree_login: UITextField!
     
-    @IBOutlet weak var entree_password: UIButton!
+    @IBOutlet weak var entree_password: UITextField!
+    
     
     var clickConnection=false
     
@@ -35,8 +36,8 @@ class ConnexionController: UIViewController {
         if(segue.identifier=="afficherListeCategorie" && clickConnection){
             
             let dvc=segue.destinationViewController as! ListeCategorieTableViewController
-            dvc.id=Identification(entree_login.text,entree_password.text)
-            
+            dvc.identification=Identification(login:entree_login!.text!,password:entree_password!.text!)
+            //dvc.boutonConnection.setTitle("Se déconnecter",forState: UIControlState.Normal)
         }
         clickConnection=false
     }

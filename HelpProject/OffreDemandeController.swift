@@ -29,6 +29,7 @@ class OffreDemandeController: UIViewController, MKMapViewDelegate {
     @IBAction func entrerContact(sender: AnyObject, forEvent event: UIEvent) {
         
     }
+    var identification: Identification!
         /* override func viewDidLoad() {
             super.viewDidLoad()
             classeBDD="Categorie"
