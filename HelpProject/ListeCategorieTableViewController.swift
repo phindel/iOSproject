@@ -16,6 +16,7 @@ class ListeCategorieTableViewController: BDDTableViewController {
     
     //var table1=["Ayy","fdg","V","","","8"]
     //var tableCategories=["","","","","","","","","","","","","","","","","",""]
+    var identification: Identification!
     
     @IBAction func remplirBDD(sender: AnyObject) {
         //tableCategories[1]="rb"
