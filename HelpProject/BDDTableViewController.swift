@@ -12,9 +12,17 @@ import CoreData
 
 class BDDTableViewController: UITableViewController {
     
-    var tableCacheBDD=["","","","","","","","","","","","","","","","","",""]
-    var classeBDD=""
-    var champAAfficherBDD=""
+    var tableCacheBDD=NSMutableArray()//["","","","","","","","","","","","","","","","","",""]
+    private var classeBDD=""
+    private var champAAfficherBDD=""
+    
+
+    func initialiser(classeBDD:String,champAAfficherBDD:String) {
+        self.classeBDD=classeBDD
+        self.champAAfficherBDD=champAAfficherBDD
+        rafraichir()
+        
+    }
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         //return the number of sections
         return 1
@@ -29,16 +37,16 @@ class BDDTableViewController: UITableViewController {
         let contexte:NSManagedObjectContext=appDel.managedObjectContext
         let req=NSFetchRequest(entityName: classeBDD)
         req.returnsObjectsAsFaults=false
-        
+        tableCacheBDD.removeAllObjects()
         var c=0
         do{
             let res=try contexte.executeFetchRequest(req)
             if res.count>0{
                 for r in res as! [NSManagedObject]{
                     //print(r.valueForKey("nomCategorie")!)
-                    if c<tableCacheBDD.count{
+                    
                         tableCacheBDD[c]=((r.valueForKey(champAAfficherBDD)!) as? String)!
-                    }
+                    
                     
                     c+=1 //swift ne supporte pas c++
                     

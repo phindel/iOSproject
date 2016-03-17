@@ -75,6 +75,7 @@
                         </connections>
                     </refreshControl>
                     <connections>
+                        <outlet property="boutonConnection" destination="h17-e5-U8S" id="76D-yn-Scv"/>
                         <segue destination="MPl-dY-rD7" kind="show" identifier="segueListeParCat" id="Oih-zT-aDb"/>
                     </connections>
                 </tableViewController>
@@ -105,6 +106,9 @@
                             <outlet property="delegate" destination="MPl-dY-rD7" id="1L7-1m-Xvw"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <segue destination="AE2-BX-IZU" kind="show" identifier="afficherDetailsOfferOrAnnonce" id="znx-4v-T4m"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zy2-l0-DAe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -439,7 +443,7 @@
         <!--Connexion-->
         <scene sceneID="m37-9C-8KA">
             <objects>
-                <viewController title="Connexion" id="07Q-2K-aTh" sceneMemberID="viewController">
+                <viewController title="Connexion" id="07Q-2K-aTh" customClass="ConnexionController" customModule="HelpProject" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="zpM-GV-iiI"/>
                         <viewControllerLayoutGuide type="bottom" id="7ka-Hz-P1k"/>
@@ -455,27 +459,52 @@
                                 <nil key="highlightedColor"/>
                                 <color key="shadowColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="login" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="whM-j3-wVh">
-                                <rect key="frame" x="-25" y="-30" width="97" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vsC-h5-qk7">
-                                <rect key="frame" x="-25" y="-30" width="97" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5gB-XN-4Jq">
+                                <rect key="frame" x="104" y="19" width="46" height="30"/>
+                                <state key="normal" title="Connexion"/>
+                                <variation key="heightClass=compact-widthClass=compact" ambiguous="YES">
+                                    <rect key="frame" x="28" y="145" width="344" height="0.0"/>
+                                </variation>
+                                <connections>
+                                    <action selector="seConnecter:" destination="07Q-2K-aTh" eventType="touchUpInside" id="41C-Af-hto"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s89-an-wTc">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <state key="normal" title="S'inscrire"/>
+                                <variation key="heightClass=compact-widthClass=compact" ambiguous="YES">
+                                    <rect key="frame" x="28" y="168" width="344" height="0.0"/>
+                                </variation>
                                 <connections>
                                     <segue destination="T2h-fR-cNp" kind="show" identifier="afficherInscription" id="qdc-uV-Add"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5gB-XN-4Jq">
-                                <rect key="frame" x="104" y="19" width="46" height="30"/>
-                                <state key="normal" title="Connexion"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="login" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="whM-j3-wVh">
+                                <rect key="frame" x="-25" y="-30" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <variation key="heightClass=compact-widthClass=compact" ambiguous="YES">
+                                    <rect key="frame" x="28" y="94" width="344" height="0.0"/>
+                                </variation>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="004-sg-fql">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Annuler"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="147" y="413" width="106" height="30"/>
+                                </variation>
+                                <connections>
+                                    <segue destination="3lz-OC-cgZ" kind="show" identifier="afficherListeCategorie" id="fhE-mR-LmE"/>
+                                </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vsC-h5-qk7">
+                                <rect key="frame" x="-25" y="-30" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <variation key="heightClass=compact-widthClass=compact" ambiguous="YES">
+                                    <rect key="frame" x="28" y="108" width="344" height="0.0"/>
+                                </variation>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -510,10 +539,11 @@
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="APG-C0-wpC"/>
-                                <exclude reference="whM-j3-wVh"/>
-                                <exclude reference="vsC-h5-qk7"/>
-                                <exclude reference="s89-an-wTc"/>
                                 <exclude reference="5gB-XN-4Jq"/>
+                                <exclude reference="s89-an-wTc"/>
+                                <exclude reference="whM-j3-wVh"/>
+                                <exclude reference="004-sg-fql"/>
+                                <exclude reference="vsC-h5-qk7"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="swq-GM-WmB"/>
@@ -548,10 +578,11 @@
                         <variation key="widthClass=compact">
                             <mask key="subviews">
                                 <include reference="APG-C0-wpC"/>
-                                <include reference="whM-j3-wVh"/>
-                                <include reference="vsC-h5-qk7"/>
-                                <include reference="s89-an-wTc"/>
                                 <include reference="5gB-XN-4Jq"/>
+                                <include reference="s89-an-wTc"/>
+                                <include reference="whM-j3-wVh"/>
+                                <include reference="004-sg-fql"/>
+                                <include reference="vsC-h5-qk7"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="swq-GM-WmB"/>
@@ -584,10 +615,14 @@
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="entree_login" destination="whM-j3-wVh" id="fJt-Il-Rs7"/>
+                        <outlet property="entree_password" destination="vsC-h5-qk7" id="CBe-oL-qtN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YC7-AA-HG7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="636" y="1062"/>
+            <point key="canvasLocation" x="529.5" y="1069"/>
         </scene>
         <!--DetailsOfferOrAnnonce-->
         <scene sceneID="AV0-AK-xzX">
@@ -840,7 +875,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W0B-Zn-VDC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2028" y="775"/>
+            <point key="canvasLocation" x="2238" y="781"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="NH2-bD-K14">
@@ -861,4 +896,8 @@
             <point key="canvasLocation" x="-34.5" y="119"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="PDb-ST-ITT"/>
+        <segue reference="znx-4v-T4m"/>
+    </inferredMetricsTieBreakers>
 </document>

@@ -11,6 +11,9 @@
 		B33310721C99DCBA009298E2 /* ProfilControler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33310711C99DCBA009298E2 /* ProfilControler.swift */; };
 		B3A66BBC1C91F80A003ED901 /* BDDCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A66BBB1C91F80A003ED901 /* BDDCache.swift */; };
 		B3A66BBE1C91FD85003ED901 /* BDDTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A66BBD1C91FD85003ED901 /* BDDTableViewController.swift */; };
+		B3ADFB6B1C9B196F008E5A91 /* ConnexionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3ADFB6A1C9B196F008E5A91 /* ConnexionController.swift */; };
+		B3ADFB6D1C9B1EF2008E5A91 /* Identification.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3ADFB6C1C9B1EF2008E5A91 /* Identification.swift */; };
+		B3ADFB6F1C9B37EB008E5A91 /* NumEtNom.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3ADFB6E1C9B37EB008E5A91 /* NumEtNom.swift */; };
 		F266E90A1C89DCD600F7AC83 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F266E9091C89DCD600F7AC83 /* AppDelegate.swift */; };
 		F266E90F1C89DCD600F7AC83 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F266E90D1C89DCD600F7AC83 /* Main.storyboard */; };
 		F266E9121C89DCD600F7AC83 /* HelpProject.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F266E9101C89DCD600F7AC83 /* HelpProject.xcdatamodeld */; };
@@ -45,6 +48,9 @@
 		B33310711C99DCBA009298E2 /* ProfilControler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfilControler.swift; sourceTree = "<group>"; };
 		B3A66BBB1C91F80A003ED901 /* BDDCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BDDCache.swift; sourceTree = "<group>"; };
 		B3A66BBD1C91FD85003ED901 /* BDDTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BDDTableViewController.swift; sourceTree = "<group>"; };
+		B3ADFB6A1C9B196F008E5A91 /* ConnexionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnexionController.swift; sourceTree = "<group>"; };
+		B3ADFB6C1C9B1EF2008E5A91 /* Identification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Identification.swift; sourceTree = "<group>"; };
+		B3ADFB6E1C9B37EB008E5A91 /* NumEtNom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumEtNom.swift; sourceTree = "<group>"; };
 		F266E9061C89DCD600F7AC83 /* HelpProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HelpProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F266E9091C89DCD600F7AC83 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F266E90E1C89DCD600F7AC83 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -125,6 +131,9 @@
 				B3A66BBD1C91FD85003ED901 /* BDDTableViewController.swift */,
 				B333106F1C99D3D3009298E2 /* OffreDemandeController.swift */,
 				B33310711C99DCBA009298E2 /* ProfilControler.swift */,
+				B3ADFB6A1C9B196F008E5A91 /* ConnexionController.swift */,
+				B3ADFB6C1C9B1EF2008E5A91 /* Identification.swift */,
+				B3ADFB6E1C9B37EB008E5A91 /* NumEtNom.swift */,
 			);
 			path = HelpProject;
 			sourceTree = "<group>";
@@ -279,7 +288,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				F28D80791C8F494A00DF0D4E /* ListeCategorieTableViewController.swift in Sources */,
+				B3ADFB6D1C9B1EF2008E5A91 /* Identification.swift in Sources */,
 				F28D807B1C8F53CE00DF0D4E /* ListeParCategorieController.swift in Sources */,
+				B3ADFB6B1C9B196F008E5A91 /* ConnexionController.swift in Sources */,
+				B3ADFB6F1C9B37EB008E5A91 /* NumEtNom.swift in Sources */,
 				F266E9121C89DCD600F7AC83 /* HelpProject.xcdatamodeld in Sources */,
 				B33310701C99D3D3009298E2 /* OffreDemandeController.swift in Sources */,
 				B33310721C99DCBA009298E2 /* ProfilControler.swift in Sources */,

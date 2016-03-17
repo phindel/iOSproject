@@ -16,7 +16,7 @@ class ProfilControler: UITableViewController {
         
     }
     var login=""
-    
+    var identification: Identification!
     @IBAction func refresh(sender: UIRefreshControl) {
         refreshControl?.attributedTitle=NSAttributedString(string:"Chargement...")
         rafraichir()

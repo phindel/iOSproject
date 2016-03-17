@@ -12,16 +12,17 @@ class ListeParCategorieController: BDDTableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        classeBDD="Categorie"
-        champAAfficherBDD="nomCategorie"
-        rafraichir()
+        
+        
+        initialiser("Categorie", champAAfficherBDD: "nomCategorie")
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
-    
+    var identification: Identification!
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -40,6 +41,18 @@ class ListeParCategorieController: BDDTableViewController {
         cell.imageView!.image=UIImage(named: "rond.png")
         
         return cell
+    }
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        performSegueWithIdentifier("afficherDetailsOfferOrAnnonce", sender: indexPath.row)
+    }
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if(segue.identifier=="afficherDetailsOfferOrAnnonce"){
+            if let indice = tableView.indexPathsForSelectedRows{
+                let dvc=segue.destinationViewController as! OffreDemandeController
+                dvc.categorie=tableCacheBDD[(indice.first?.item)!] as! String as String!
+                dvc.identification=identification
+            }
+        }
     }
     /*let bdcache=BDDCache()
     func rafraichir(){
