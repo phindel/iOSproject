@@ -11,7 +11,7 @@ import CoreData
 import MapKit
 
 class OffreDemandeController: UIViewController, MKMapViewDelegate{
-
+var identification: Identification!
     @IBOutlet weak var localisationOnMap: MKMapView!
     
     @IBOutlet weak var libelleA_O: UILabel!

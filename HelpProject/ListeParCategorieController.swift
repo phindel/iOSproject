@@ -33,7 +33,7 @@ class ListeParCategorieController: BDDTableViewController {
     // MARK: - Table view data source
 
     override func ajouterDansTable(c:Int,r:NSManagedObject ){
-        tableCacheBDD[c]=NumEtNom(num: 1,nom: ((r.valueForKey("b")!) as? String)!)//((r.valueForKey("b")!) as? String)!
+        tableCacheBDD[c]=NumEtNom(num: 1,nom: ((r.valueForKey("nomCategorie")!) as? String)!)//((r.valueForKey("b")!) as? String)!
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -52,7 +52,8 @@ class ListeParCategorieController: BDDTableViewController {
         if(segue.identifier=="afficherDetailsOfferOrAnnonce"){
             if let indice = tableView.indexPathsForSelectedRows{
                 let dvc=segue.destinationViewController as! OffreDemandeController
-                dvc.categorie=tableCacheBDD[(indice.first?.item)!] as! String as String!
+                let nen=tableCacheBDD[(indice.first?.item)!] as! NumEtNom as NumEtNom!
+                dvc.categorie=nen.nom//tableCacheBDD[(indice.first?.item)!] as! String as String!
                 dvc.identification=identification
             }
         }
