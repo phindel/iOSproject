@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class ListeParCategorieController: BDDTableViewController {
 
@@ -31,7 +32,9 @@ class ListeParCategorieController: BDDTableViewController {
     var categorie=""
     // MARK: - Table view data source
 
-    
+    override func ajouterDansTable(c:Int,r:NSManagedObject ){
+        tableCacheBDD[c]=NumEtNom(num: 1,nom: ((r.valueForKey("b")!) as? String)!)//((r.valueForKey("b")!) as? String)!
+    }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         //let cell = tableView.dequeueReusableCellWithIdentifier("typeGen", forIndexPath: indexPath)

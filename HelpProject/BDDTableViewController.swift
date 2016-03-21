@@ -32,6 +32,9 @@ class BDDTableViewController: UITableViewController {
         //return the number of rows
         return tableCacheBDD.count
     }
+    func ajouterDansTable(c:Int,r:NSManagedObject ){
+        tableCacheBDD[c]=((r.valueForKey(champAAfficherBDD)!) as? String)!
+    }
     func rafraichir(){
         let appDel:AppDelegate=UIApplication.sharedApplication().delegate as! AppDelegate
         let contexte:NSManagedObjectContext=appDel.managedObjectContext
@@ -45,7 +48,7 @@ class BDDTableViewController: UITableViewController {
                 for r in res as! [NSManagedObject]{
                     //print(r.valueForKey("nomCategorie")!)
                     
-                        tableCacheBDD[c]=((r.valueForKey(champAAfficherBDD)!) as? String)!
+                    ajouterDansTable(c,r:r)
                     
                     
                     c+=1//swift ne supporte pas c++
