@@ -51,7 +51,7 @@ class BDDTableViewController: UITableViewController {
                     ajouterDansTable(c,r:r)
                     
                     
-                    c+=1//swift ne supporte pas c++
+                    c+=1 //swift ne supporte pas c++
                     
                 }
             }
