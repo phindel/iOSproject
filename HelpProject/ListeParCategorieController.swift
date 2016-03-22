@@ -15,7 +15,7 @@ class ListeParCategorieController: BDDTableViewController {
         super.viewDidLoad()
         
         
-        initialiser("Categorie", champAAfficherBDD: "nomCategorie")
+        initialiser("Service", champAAfficherBDD: "__inutile__")
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -33,13 +33,16 @@ class ListeParCategorieController: BDDTableViewController {
     // MARK: - Table view data source
 
     override func ajouterDansTable(c:Int,r:NSManagedObject ){
-        tableCacheBDD[c]=NumEtNom(num: 1,nom: ((r.valueForKey("nomCategorie")!) as? String)!)//((r.valueForKey("b")!) as? String)!
+        tableCacheBDD[c]=NumEtNom(num: ((r.valueForKey("idService")!) as? Int)!,nom: ((r.valueForKey("intituleService")!) as? String)!)//((r.valueForKey("b")!) as? String)!
     }
-    
+    override func ajouterCritere(req:NSFetchRequest){
+        req.predicate=NSPredicate(format: "categorie = %@", categorie)
+    }
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         //let cell = tableView.dequeueReusableCellWithIdentifier("typeGen", forIndexPath: indexPath)
         let cell=UITableViewCell(style: .Value1, reuseIdentifier: "typeDemande")
-        cell.textLabel!.text=categorie
+        let nen=tableCacheBDD[indexPath.item] as! NumEtNom as NumEtNom!
+        cell.textLabel!.text=nen.nom//categorie
         cell.detailTextLabel!.text="TODO"
         cell.imageView!.image=UIImage(named: "rond.png")
         
@@ -53,8 +56,9 @@ class ListeParCategorieController: BDDTableViewController {
             if let indice = tableView.indexPathsForSelectedRows{
                 let dvc=segue.destinationViewController as! OffreDemandeController
                 let nen=tableCacheBDD[(indice.first?.item)!] as! NumEtNom as NumEtNom!
-                dvc.categorie=nen.nom//tableCacheBDD[(indice.first?.item)!] as! String as String!
+                //dvc.categorie=nen.nom//tableCacheBDD[(indice.first?.item)!] as! String as String!
                 dvc.identification=identification
+                dvc.idService=nen.num
             }
         }
     }

@@ -35,11 +35,15 @@ class BDDTableViewController: UITableViewController {
     func ajouterDansTable(c:Int,r:NSManagedObject ){
         tableCacheBDD[c]=((r.valueForKey(champAAfficherBDD)!) as? String)!
     }
+    func ajouterCritere(req:NSFetchRequest){
+        
+    }
     func rafraichir(){
         let appDel:AppDelegate=UIApplication.sharedApplication().delegate as! AppDelegate
         let contexte:NSManagedObjectContext=appDel.managedObjectContext
         let req=NSFetchRequest(entityName: classeBDD)
         req.returnsObjectsAsFaults=false
+        ajouterCritere(req)
         tableCacheBDD.removeAllObjects()
         var c=0
         do{
