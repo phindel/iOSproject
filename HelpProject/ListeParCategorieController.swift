@@ -16,6 +16,8 @@ class ListeParCategorieController: BDDTableViewController {
         
         
         initialiser("Service", champAAfficherBDD: "__inutile__")
+        titreVue.title=categorie
+        boutonAjouter.enabled = (identification != nil)
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -23,6 +25,14 @@ class ListeParCategorieController: BDDTableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
+    
+    
+    @IBOutlet weak var boutonAjouter: UIBarButtonItem!
+    @IBOutlet weak var titreVue: UINavigationItem!
+    
+    
+    
+    
     var identification: Identification!
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

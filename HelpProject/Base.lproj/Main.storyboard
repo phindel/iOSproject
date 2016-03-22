@@ -106,13 +106,20 @@
                             <outlet property="delegate" destination="MPl-dY-rD7" id="1L7-1m-Xvw"/>
                         </connections>
                     </tableView>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="-categorie-" id="kNp-5i-NUV">
+                        <barButtonItem key="rightBarButtonItem" title="Ajouter" id="rOy-VW-9P2"/>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="boutonAjouter" destination="rOy-VW-9P2" id="1WC-RY-a1F"/>
+                        <outlet property="titreVue" destination="kNp-5i-NUV" id="Cge-Mx-NAh"/>
                         <segue destination="AE2-BX-IZU" kind="show" identifier="afficherDetailsOfferOrAnnonce" id="znx-4v-T4m"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zy2-l0-DAe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1113" y="550"/>
+            <point key="canvasLocation" x="967.5" y="701"/>
         </scene>
         <!--ListeMessages-->
         <scene sceneID="BuI-ow-TCN">
@@ -692,12 +699,6 @@
                                     <action selector="entrerContact:forEvent:" destination="AE2-BX-IZU" eventType="touchUpInside" id="5VP-qC-eEV"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VdV-CL-10a">
-                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="budget " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7i3-Ez-4W5">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                 <constraints>
@@ -718,6 +719,12 @@
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date pub" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="11E-GF-NkY">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VdV-CL-10a">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -771,9 +778,9 @@
                                 <exclude reference="d9Z-lh-wHc"/>
                                 <exclude reference="FvN-K1-Zu8"/>
                                 <exclude reference="wBi-Tx-NGT"/>
-                                <exclude reference="VdV-CL-10a"/>
                                 <exclude reference="7i3-Ez-4W5"/>
                                 <exclude reference="11E-GF-NkY"/>
+                                <exclude reference="VdV-CL-10a"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="mws-o0-hbD"/>
@@ -822,9 +829,9 @@
                                 <include reference="d9Z-lh-wHc"/>
                                 <include reference="FvN-K1-Zu8"/>
                                 <include reference="wBi-Tx-NGT"/>
-                                <include reference="VdV-CL-10a"/>
                                 <include reference="7i3-Ez-4W5"/>
                                 <include reference="11E-GF-NkY"/>
+                                <include reference="VdV-CL-10a"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="mws-o0-hbD"/>
