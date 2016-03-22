@@ -23,6 +23,7 @@ class BDDTableViewController: UITableViewController {
         rafraichir()
         
     }
+    
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         //return the number of sections
         return 1
