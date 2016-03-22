@@ -33,6 +33,11 @@ class ListeCategorieTableViewController: BDDTableViewController {
         newCat3.setValue(3, forKey: "idCategorie")
         newCat3.setValue("cat 3", forKey: "nomCategorie")
         
+        let newPerson=NSEntityDescription.insertNewObjectForEntityForName("Person", inManagedObjectContext: contexte)
+        newPerson.setValue(10, forKey: "idPerson")
+        newPerson.setValue("Quelque part", forKey: "address")
+        newPerson.setValue("a", forKey: "login")
+        newPerson.setValue("a", forKey: "password")
         
         let newService=NSEntityDescription.insertNewObjectForEntityForName("Service", inManagedObjectContext: contexte)
         newService.setValue(1, forKey: "attribute")
@@ -45,6 +50,7 @@ class ListeCategorieTableViewController: BDDTableViewController {
         newService.setValue(true, forKey: "offreOuDemande")
         newService.setValue("cat 1", forKey: "categorie")
         newService.setValue("Description du service", forKey: "descriptionService")
+        newService.setValue(10, forKey: "demandeur")
         do{
             try contexte.save()
             

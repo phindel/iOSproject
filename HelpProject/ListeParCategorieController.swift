@@ -17,7 +17,10 @@ class ListeParCategorieController: BDDTableViewController {
         
         initialiser("Service", champAAfficherBDD: "__inutile__")
         titreVue.title=categorie
-        boutonAjouter.enabled = (identification != nil)
+        
+        //TODO
+        boutonAjouter.enabled = true//(identification != nil)
+        
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -71,6 +74,13 @@ class ListeParCategorieController: BDDTableViewController {
                 dvc.idService=nen.num
             }
         }
+        if(segue.identifier=="nouveauService"){
+            
+            let dvc=segue.destinationViewController as! NouveauServiceController
+            dvc.identification=identification
+            dvc.categorie=categorie
+        }
+        
     }
     /*let bdcache=BDDCache()
     func rafraichir(){

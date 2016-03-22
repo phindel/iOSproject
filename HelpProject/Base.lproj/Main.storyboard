@@ -108,7 +108,11 @@
                     </tableView>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="-categorie-" id="kNp-5i-NUV">
-                        <barButtonItem key="rightBarButtonItem" title="Ajouter" id="rOy-VW-9P2"/>
+                        <barButtonItem key="rightBarButtonItem" title="Ajouter" id="rOy-VW-9P2">
+                            <connections>
+                                <segue destination="tST-QU-DRk" kind="show" identifier="nouveauService" id="C1R-gO-F5F"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
@@ -119,7 +123,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zy2-l0-DAe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="967.5" y="701"/>
+            <point key="canvasLocation" x="867" y="713"/>
         </scene>
         <!--ListeMessages-->
         <scene sceneID="BuI-ow-TCN">
@@ -883,6 +887,129 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W0B-Zn-VDC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2238" y="781"/>
+        </scene>
+        <!--Nouveau service-->
+        <scene sceneID="8ei-j2-70c">
+            <objects>
+                <viewController title="Nouveau service" id="tST-QU-DRk" customClass="NouveauServiceController" customModule="HelpProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="8F6-B8-1bx"/>
+                        <viewControllerLayoutGuide type="bottom" id="5si-MT-xws"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="dS4-gx-Nu8">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="fb7-VP-vVs">
+                                <rect key="frame" x="-160" y="-108" width="320" height="216"/>
+                                <date key="date" timeIntervalSinceReferenceDate="480368726.72030801">
+                                    <!--2016-03-22 19:45:26 +0000-->
+                                </date>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="311" width="400" height="70"/>
+                                </variation>
+                            </datePicker>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="MCx-aF-l91">
+                                <rect key="frame" x="-160" y="-108" width="320" height="216"/>
+                                <date key="date" timeIntervalSinceReferenceDate="480368743.61132503">
+                                    <!--2016-03-22 19:45:43 +0000-->
+                                </date>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="-4" y="382" width="400" height="84"/>
+                                </variation>
+                            </datePicker>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cn9-Ob-54B">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Valider"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="138" y="490" width="117" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="creerService:" destination="tST-QU-DRk" eventType="touchUpInside" id="goM-MI-6Or"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Intitulé" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tkc-f6-Oyy">
+                                <rect key="frame" x="-25" y="-30" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="67" y="76" width="97" height="30"/>
+                                </variation>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Durée" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Lar-TI-22P">
+                                <rect key="frame" x="-25" y="-30" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="59" y="233" width="97" height="30"/>
+                                </variation>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Cout" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xk5-vf-oNd">
+                                <rect key="frame" x="-25" y="-30" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="251" y="233" width="97" height="30"/>
+                                </variation>
+                            </textField>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Am7-Ns-kXx">
+                                <rect key="frame" x="-60" y="-14" width="121" height="29"/>
+                                <segments>
+                                    <segment title="Offre"/>
+                                    <segment title="Demande"/>
+                                </segments>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="227" y="275" width="121" height="29"/>
+                                </variation>
+                            </segmentedControl>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Description" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="G2e-IC-oAD">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="80" y="114" width="240" height="128"/>
+                                </variation>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="fb7-VP-vVs"/>
+                                <exclude reference="MCx-aF-l91"/>
+                                <exclude reference="Cn9-Ob-54B"/>
+                                <exclude reference="tkc-f6-Oyy"/>
+                                <exclude reference="Lar-TI-22P"/>
+                                <exclude reference="Xk5-vf-oNd"/>
+                                <exclude reference="Am7-Ns-kXx"/>
+                                <exclude reference="G2e-IC-oAD"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="fb7-VP-vVs"/>
+                                <include reference="MCx-aF-l91"/>
+                                <include reference="Cn9-Ob-54B"/>
+                                <include reference="tkc-f6-Oyy"/>
+                                <include reference="Lar-TI-22P"/>
+                                <include reference="Xk5-vf-oNd"/>
+                                <include reference="Am7-Ns-kXx"/>
+                                <include reference="G2e-IC-oAD"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="cout" destination="Xk5-vf-oNd" id="1aG-IN-USb"/>
+                        <outlet property="dateDebutDispo" destination="fb7-VP-vVs" id="BWw-5J-Sgq"/>
+                        <outlet property="dateFinDispo" destination="MCx-aF-l91" id="WU2-e2-zIn"/>
+                        <outlet property="ddescription" destination="G2e-IC-oAD" id="9Io-ej-KcE"/>
+                        <outlet property="duree" destination="Lar-TI-22P" id="Zka-wo-C0w"/>
+                        <outlet property="intitule" destination="tkc-f6-Oyy" id="Zao-Oz-IFZ"/>
+                        <outlet property="offreOuDemande" destination="Am7-Ns-kXx" id="FbT-qI-gsc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jjr-3Y-2M1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2272.5" y="1452"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="NH2-bD-K14">
