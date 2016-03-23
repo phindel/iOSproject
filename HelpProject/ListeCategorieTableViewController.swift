@@ -51,6 +51,20 @@ class ListeCategorieTableViewController: BDDTableViewController {
         newService.setValue("cat 1", forKey: "categorie")
         newService.setValue("Description du service", forKey: "descriptionService")
         newService.setValue(10, forKey: "initiateur")
+        
+        
+        let newService2=NSEntityDescription.insertNewObjectForEntityForName("Service", inManagedObjectContext: contexte)
+        newService2.setValue(1, forKey: "attribute")
+        newService2.setValue(2, forKey: "coutService")
+        newService2.setValue(NSDate(timeIntervalSinceNow: 10), forKey: "dateDebutDispo")
+        newService2.setValue(NSDate(timeIntervalSinceNow: 100), forKey: "dateFinDispo")
+        newService2.setValue(10, forKey: "duree")
+        newService2.setValue(101, forKey: "idService")
+        newService2.setValue("srv2", forKey: "intituleService")
+        newService2.setValue(true, forKey: "offreOuDemande")
+        newService2.setValue("cat 1", forKey: "categorie")
+        newService2.setValue("Description du service", forKey: "descriptionService")
+        newService2.setValue(10, forKey: "initiateur")
         do{
             try contexte.save()
             

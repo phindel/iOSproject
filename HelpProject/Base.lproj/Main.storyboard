@@ -91,6 +91,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <segmentedControl key="tableHeaderView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="CLP-5b-T8J">
+                            <rect key="frame" x="-60" y="-14" width="121" height="29"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <segments>
+                                <segment title="Offres"/>
+                                <segment title="Demandes"/>
+                            </segments>
+                            <connections>
+                                <action selector="selectionOffreOuDemande:" destination="MPl-dY-rD7" eventType="valueChanged" id="QEu-XD-pW3"/>
+                            </connections>
+                        </segmentedControl>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="typeDemande" id="nWY-ac-GHP">
                                 <rect key="frame" x="0.0" y="92" width="600" height="44"/>
@@ -110,13 +121,16 @@
                     <navigationItem key="navigationItem" title="-categorie-" id="kNp-5i-NUV">
                         <barButtonItem key="rightBarButtonItem" title="Ajouter" id="rOy-VW-9P2">
                             <connections>
-                                <segue destination="tST-QU-DRk" kind="show" identifier="nouveauService" id="C1R-gO-F5F"/>
+                                <segue destination="tST-QU-DRk" kind="popoverPresentation" identifier="nouveauService" popoverAnchorBarButtonItem="rOy-VW-9P2" id="3pH-ot-TAB">
+                                    <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                </segue>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="boutonAjouter" destination="rOy-VW-9P2" id="1WC-RY-a1F"/>
+                        <outlet property="choixOffreOuDemande" destination="CLP-5b-T8J" id="9pf-NL-byD"/>
                         <outlet property="titreVue" destination="kNp-5i-NUV" id="Cge-Mx-NAh"/>
                         <segue destination="AE2-BX-IZU" kind="show" identifier="afficherDetailsOfferOrAnnonce" id="znx-4v-T4m"/>
                     </connections>
@@ -897,6 +911,7 @@
                         <viewControllerLayoutGuide type="bottom" id="5si-MT-xws"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="dS4-gx-Nu8">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="fb7-VP-vVs">
@@ -917,16 +932,6 @@
                                     <rect key="frame" x="-4" y="382" width="400" height="84"/>
                                 </variation>
                             </datePicker>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cn9-Ob-54B">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <state key="normal" title="Valider"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="138" y="490" width="117" height="30"/>
-                                </variation>
-                                <connections>
-                                    <action selector="creerService:" destination="tST-QU-DRk" eventType="touchUpInside" id="goM-MI-6Or"/>
-                                </connections>
-                            </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Intitulé" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tkc-f6-Oyy">
                                 <rect key="frame" x="-25" y="-30" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -970,30 +975,40 @@
                                     <rect key="frame" x="80" y="114" width="240" height="128"/>
                                 </variation>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cn9-Ob-54B">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Valider"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="138" y="490" width="117" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="creerService:" destination="tST-QU-DRk" eventType="touchUpInside" id="goM-MI-6Or"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="fb7-VP-vVs"/>
                                 <exclude reference="MCx-aF-l91"/>
-                                <exclude reference="Cn9-Ob-54B"/>
                                 <exclude reference="tkc-f6-Oyy"/>
                                 <exclude reference="Lar-TI-22P"/>
                                 <exclude reference="Xk5-vf-oNd"/>
                                 <exclude reference="Am7-Ns-kXx"/>
                                 <exclude reference="G2e-IC-oAD"/>
+                                <exclude reference="Cn9-Ob-54B"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
                                 <include reference="fb7-VP-vVs"/>
                                 <include reference="MCx-aF-l91"/>
-                                <include reference="Cn9-Ob-54B"/>
                                 <include reference="tkc-f6-Oyy"/>
                                 <include reference="Lar-TI-22P"/>
                                 <include reference="Xk5-vf-oNd"/>
                                 <include reference="Am7-Ns-kXx"/>
                                 <include reference="G2e-IC-oAD"/>
+                                <include reference="Cn9-Ob-54B"/>
                             </mask>
                         </variation>
                     </view>
@@ -1005,6 +1020,7 @@
                         <outlet property="duree" destination="Lar-TI-22P" id="Zka-wo-C0w"/>
                         <outlet property="intitule" destination="tkc-f6-Oyy" id="Zao-Oz-IFZ"/>
                         <outlet property="offreOuDemande" destination="Am7-Ns-kXx" id="FbT-qI-gsc"/>
+                        <segue destination="MPl-dY-rD7" kind="show" identifier="retourListeParCategorie" id="D7E-Df-3Az"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jjr-3Y-2M1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1031,7 +1047,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="PDb-ST-ITT"/>
+        <segue reference="D7E-Df-3Az"/>
         <segue reference="znx-4v-T4m"/>
+        <segue reference="PDb-ST-ITT"/>
     </inferredMetricsTieBreakers>
 </document>

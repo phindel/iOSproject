@@ -10,7 +10,17 @@ import UIKit
 import CoreData
 
 class ListeParCategorieController: BDDTableViewController {
+    @IBOutlet weak var choixOffreOuDemande: UISegmentedControl!
 
+    @IBAction func selectionOffreOuDemande(sender: UISegmentedControl) {
+        
+        
+        rafraichir()
+        /*tableView.dataSource=nil
+        tableView.dataSource=self*/
+        self.tableView.reloadData()
+        print("choixOffreOuDemande")
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -49,15 +59,16 @@ class ListeParCategorieController: BDDTableViewController {
         tableCacheBDD[c]=NumEtNom(num: ((r.valueForKey("idService")!) as? Int)!,nom: ((r.valueForKey("intituleService")!) as? String)!)//((r.valueForKey("b")!) as? String)!
     }
     override func ajouterCritere(req:NSFetchRequest){
-        req.predicate=NSPredicate(format: "categorie = %@", categorie)
+        req.predicate=NSPredicate(format: "(categorie = %@) and (offreOuDemande=%@)", categorie,choixOffreOuDemande.selectedSegmentIndex==0)
     }
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        //let cell = tableView.dequeueReusableCellWithIdentifier("typeGen", forIndexPath: indexPath)
-        let cell=UITableViewCell(style: .Value1, reuseIdentifier: "typeDemande")
+        print("tableView cellForRowAtIndexPath")
+        let cell = tableView.dequeueReusableCellWithIdentifier("typeDemande", forIndexPath: indexPath)
+        //let cell=UITableViewCell(style: .Value1, reuseIdentifier: "typeDemande")
         let nen=tableCacheBDD[indexPath.item] as! NumEtNom as NumEtNom!
         cell.textLabel!.text=nen.nom//categorie
-        cell.detailTextLabel!.text="TODO"
-        cell.imageView!.image=UIImage(named: "rond.png")
+        //cell.detailTextLabel!.text="TODO"
+        //cell.imageView!.image=UIImage(named: "rond.png")
         
         return cell
     }
@@ -68,6 +79,7 @@ class ListeParCategorieController: BDDTableViewController {
         if(segue.identifier=="afficherDetailsOfferOrAnnonce"){
             if let indice = tableView.indexPathsForSelectedRows{
                 let dvc=segue.destinationViewController as! OffreDemandeController
+                print((indice.first?.item)!)
                 let nen=tableCacheBDD[(indice.first?.item)!] as! NumEtNom as NumEtNom!
                 //dvc.categorie=nen.nom//tableCacheBDD[(indice.first?.item)!] as! String as String!
                 dvc.identification=identification

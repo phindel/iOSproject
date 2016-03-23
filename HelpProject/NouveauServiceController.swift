@@ -41,14 +41,14 @@ class NouveauServiceController: UIViewController{
         newService.setValue(Int(duree.text!), forKey: "duree")
         newService.setValue(100, forKey: "idService")//TODO autogenere?
         newService.setValue(intitule.text, forKey: "intituleService")
-        newService.setValue(offreOuDemande.selectedSegmentIndex==1, forKey: "offreOuDemande")
+        newService.setValue(offreOuDemande.selectedSegmentIndex==0, forKey: "offreOuDemande")
         newService.setValue(categorie, forKey: "categorie")
         newService.setValue(ddescription.text, forKey: "descriptionService")
         newService.setValue(identification.id, forKey: "initiateur")
         
         do{
             try contexte.save()
-            
+            performSegueWithIdentifier("retourListeParCategorie", sender: 1)
         }catch{
             print("Probleme lors du peuplement de la BDD")
             //tableCacheBDD[0]="BDD pas remplie"
