@@ -12,8 +12,10 @@ import CoreData
 class Identification{
     var login=""
     var password=""
-    init(login:String , password:String){
+    var id:Int
+    init(login:String , password:String, id:Int){
         self.login=login
         self.password=password
+        self.id=id
     }
 }

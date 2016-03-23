@@ -24,10 +24,10 @@
         <attribute name="coutService" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <attribute name="dateDebutDispo" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="dateFinDispo" optional="YES" attributeType="Date" syncable="YES"/>
-        <attribute name="demandeur" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="descriptionService" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="duree" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="idService" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="initiateur" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="intituleService" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="offreOuDemande" optional="YES" attributeType="Boolean" defaultValueString="0" syncable="YES"/>
     </entity>

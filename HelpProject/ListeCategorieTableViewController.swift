@@ -50,7 +50,7 @@ class ListeCategorieTableViewController: BDDTableViewController {
         newService.setValue(true, forKey: "offreOuDemande")
         newService.setValue("cat 1", forKey: "categorie")
         newService.setValue("Description du service", forKey: "descriptionService")
-        newService.setValue(10, forKey: "demandeur")
+        newService.setValue(10, forKey: "initiateur")
         do{
             try contexte.save()
             

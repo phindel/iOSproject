@@ -44,6 +44,8 @@ class NouveauServiceController: UIViewController{
         newService.setValue(offreOuDemande.selectedSegmentIndex==1, forKey: "offreOuDemande")
         newService.setValue(categorie, forKey: "categorie")
         newService.setValue(ddescription.text, forKey: "descriptionService")
+        newService.setValue(identification.id, forKey: "initiateur")
+        
         do{
             try contexte.save()
             
