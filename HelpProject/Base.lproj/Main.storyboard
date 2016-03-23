@@ -121,9 +121,7 @@
                     <navigationItem key="navigationItem" title="-categorie-" id="kNp-5i-NUV">
                         <barButtonItem key="rightBarButtonItem" title="Ajouter" id="rOy-VW-9P2">
                             <connections>
-                                <segue destination="tST-QU-DRk" kind="popoverPresentation" identifier="nouveauService" popoverAnchorBarButtonItem="rOy-VW-9P2" id="3pH-ot-TAB">
-                                    <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                                </segue>
+                                <segue destination="tST-QU-DRk" kind="showDetail" identifier="nouveauService" action="showViewController:sender:" id="3pH-ot-TAB"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
