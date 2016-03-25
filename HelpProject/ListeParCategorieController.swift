@@ -19,7 +19,12 @@ class ListeParCategorieController: BDDTableViewController {
         /*tableView.dataSource=nil
         tableView.dataSource=self*/
         self.tableView.reloadData()
-        print("choixOffreOuDemande")
+    }
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        rafraichir()
+        self.tableView.reloadData()
     }
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -48,7 +48,8 @@ class NouveauServiceController: UIViewController{
         
         do{
             try contexte.save()
-            performSegueWithIdentifier("retourListeParCategorie", sender: 1)
+            //performSegueWithIdentifier("retourListeParCategorie", sender: 1)
+            navigationController?.popViewControllerAnimated(false)
         }catch{
             print("Probleme lors du peuplement de la BDD")
             //tableCacheBDD[0]="BDD pas remplie"
