@@ -746,6 +746,16 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hye-Yc-gbY">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Voir les reponses"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="232" y="72" width="142" height="30"/>
+                                </variation>
+                                <connections>
+                                    <segue destination="MD0-Ev-4Le" kind="show" identifier="voirReponse" id="9NK-EG-jhy"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -797,6 +807,7 @@
                                 <exclude reference="7i3-Ez-4W5"/>
                                 <exclude reference="11E-GF-NkY"/>
                                 <exclude reference="VdV-CL-10a"/>
+                                <exclude reference="Hye-Yc-gbY"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="mws-o0-hbD"/>
@@ -848,6 +859,7 @@
                                 <include reference="7i3-Ez-4W5"/>
                                 <include reference="11E-GF-NkY"/>
                                 <include reference="VdV-CL-10a"/>
+                                <include reference="Hye-Yc-gbY"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="mws-o0-hbD"/>
@@ -899,6 +911,77 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W0B-Zn-VDC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2238" y="781"/>
+        </scene>
+        <!--Liste Reponses Controller-->
+        <scene sceneID="J7B-eK-4ag">
+            <objects>
+                <tableViewController id="MD0-Ev-4Le" customClass="ListeReponsesController" customModule="HelpProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="mHb-2j-R8E">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="typeReponse" id="Xtu-wx-5Ac">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Xtu-wx-5Ac" id="mNo-z5-rlr">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="MD0-Ev-4Le" id="P5o-en-unb"/>
+                            <outlet property="delegate" destination="MD0-Ev-4Le" id="DLM-LS-sda"/>
+                        </connections>
+                    </tableView>
+                    <connections>
+                        <segue destination="x6t-Oa-ZvS" kind="popoverPresentation" identifier="voirReponse" id="Kal-mf-ZBF">
+                            <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                        </segue>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sEg-5k-f0j" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3015" y="838"/>
+        </scene>
+        <!--Voir Reponse Controller-->
+        <scene sceneID="8eA-C0-FIu">
+            <objects>
+                <viewController id="x6t-Oa-ZvS" customClass="VoirReponseController" customModule="HelpProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="j6h-pf-Ct5"/>
+                        <viewControllerLayoutGuide type="bottom" id="6aT-v0-Q8E"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="mXg-Ep-05a">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Jkr-qp-cm7">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="80" y="34" width="240" height="128"/>
+                                </variation>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="Jkr-qp-cm7"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="Jkr-qp-cm7"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="grandTextarea" destination="Jkr-qp-cm7" id="5ah-a1-4YO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LLI-Be-ynx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3180" y="1432"/>
         </scene>
         <!--Nouveau service-->
         <scene sceneID="8ei-j2-70c">

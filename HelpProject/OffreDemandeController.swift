@@ -89,6 +89,18 @@ class OffreDemandeController: UIViewController, MKMapViewDelegate{
             
             
         }
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        if(segue.identifier=="voirReponse"){
+            
+            let dvc=segue.destinationViewController as! ListeReponsesController
+            dvc.identification=identification
+            dvc.idService=idService
+        }
+        
+    }
+    //
+    
     
     
     func tableView( tableView: UITableView, numBerOfRowsInSection section : Int) ->Int {

@@ -10,6 +10,8 @@
 		B33310701C99D3D3009298E2 /* OffreDemandeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B333106F1C99D3D3009298E2 /* OffreDemandeController.swift */; };
 		B33310721C99DCBA009298E2 /* ProfilControler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33310711C99DCBA009298E2 /* ProfilControler.swift */; };
 		B3779CF71CA1D69C0016B8C9 /* NouveauServiceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3779CF61CA1D69C0016B8C9 /* NouveauServiceController.swift */; };
+		B38654E21CA5D92A00AB410D /* ListeReponsesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38654E11CA5D92A00AB410D /* ListeReponsesController.swift */; };
+		B38654E41CA5DE2700AB410D /* VoirReponseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38654E31CA5DE2700AB410D /* VoirReponseController.swift */; };
 		B3A66BBC1C91F80A003ED901 /* BDDCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A66BBB1C91F80A003ED901 /* BDDCache.swift */; };
 		B3A66BBE1C91FD85003ED901 /* BDDTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A66BBD1C91FD85003ED901 /* BDDTableViewController.swift */; };
 		B3ADFB6B1C9B196F008E5A91 /* ConnexionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3ADFB6A1C9B196F008E5A91 /* ConnexionController.swift */; };
@@ -48,6 +50,8 @@
 		B333106F1C99D3D3009298E2 /* OffreDemandeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OffreDemandeController.swift; sourceTree = "<group>"; };
 		B33310711C99DCBA009298E2 /* ProfilControler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfilControler.swift; sourceTree = "<group>"; };
 		B3779CF61CA1D69C0016B8C9 /* NouveauServiceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NouveauServiceController.swift; sourceTree = "<group>"; };
+		B38654E11CA5D92A00AB410D /* ListeReponsesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListeReponsesController.swift; sourceTree = "<group>"; };
+		B38654E31CA5DE2700AB410D /* VoirReponseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VoirReponseController.swift; sourceTree = "<group>"; };
 		B3A66BBB1C91F80A003ED901 /* BDDCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BDDCache.swift; sourceTree = "<group>"; };
 		B3A66BBD1C91FD85003ED901 /* BDDTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BDDTableViewController.swift; sourceTree = "<group>"; };
 		B3ADFB6A1C9B196F008E5A91 /* ConnexionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnexionController.swift; sourceTree = "<group>"; };
@@ -137,6 +141,8 @@
 				B3ADFB6C1C9B1EF2008E5A91 /* Identification.swift */,
 				B3ADFB6E1C9B37EB008E5A91 /* NumEtNom.swift */,
 				B3779CF61CA1D69C0016B8C9 /* NouveauServiceController.swift */,
+				B38654E11CA5D92A00AB410D /* ListeReponsesController.swift */,
+				B38654E31CA5DE2700AB410D /* VoirReponseController.swift */,
 			);
 			path = HelpProject;
 			sourceTree = "<group>";
@@ -290,6 +296,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B38654E41CA5DE2700AB410D /* VoirReponseController.swift in Sources */,
 				F28D80791C8F494A00DF0D4E /* ListeCategorieTableViewController.swift in Sources */,
 				B3779CF71CA1D69C0016B8C9 /* NouveauServiceController.swift in Sources */,
 				B3ADFB6D1C9B1EF2008E5A91 /* Identification.swift in Sources */,
@@ -299,6 +306,7 @@
 				F266E9121C89DCD600F7AC83 /* HelpProject.xcdatamodeld in Sources */,
 				B33310701C99D3D3009298E2 /* OffreDemandeController.swift in Sources */,
 				B33310721C99DCBA009298E2 /* ProfilControler.swift in Sources */,
+				B38654E21CA5D92A00AB410D /* ListeReponsesController.swift in Sources */,
 				B3A66BBC1C91F80A003ED901 /* BDDCache.swift in Sources */,
 				B3A66BBE1C91FD85003ED901 /* BDDTableViewController.swift in Sources */,
 				F266E90A1C89DCD600F7AC83 /* AppDelegate.swift in Sources */,
