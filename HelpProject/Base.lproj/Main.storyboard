@@ -933,9 +933,7 @@
                         </connections>
                     </tableView>
                     <connections>
-                        <segue destination="x6t-Oa-ZvS" kind="popoverPresentation" identifier="voirReponse" id="Kal-mf-ZBF">
-                            <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                        </segue>
+                        <segue destination="x6t-Oa-ZvS" kind="show" identifier="voirReponse" id="Kal-mf-ZBF"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sEg-5k-f0j" userLabel="First Responder" sceneMemberID="firstResponder"/>
