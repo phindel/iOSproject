@@ -756,6 +756,16 @@
                                     <segue destination="MD0-Ev-4Le" kind="show" identifier="voirReponse" id="9NK-EG-jhy"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xm6-VX-t4a">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Répondre"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="161" y="72" width="75" height="30"/>
+                                </variation>
+                                <connections>
+                                    <segue destination="bpm-s7-MVy" kind="show" identifier="repondre" id="go5-BP-hmQ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -808,6 +818,7 @@
                                 <exclude reference="11E-GF-NkY"/>
                                 <exclude reference="VdV-CL-10a"/>
                                 <exclude reference="Hye-Yc-gbY"/>
+                                <exclude reference="xm6-VX-t4a"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="mws-o0-hbD"/>
@@ -860,6 +871,7 @@
                                 <include reference="11E-GF-NkY"/>
                                 <include reference="VdV-CL-10a"/>
                                 <include reference="Hye-Yc-gbY"/>
+                                <include reference="xm6-VX-t4a"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="mws-o0-hbD"/>
@@ -911,6 +923,70 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W0B-Zn-VDC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2238" y="781"/>
+        </scene>
+        <!--Repondre Controller-->
+        <scene sceneID="22i-A1-UvD">
+            <objects>
+                <viewController id="bpm-s7-MVy" customClass="RepondreController" customModule="HelpProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="WkB-Ie-jUV"/>
+                        <viewControllerLayoutGuide type="bottom" id="c27-QU-gwP"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Lo6-dJ-vxN">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Sujet" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4MO-h4-NL9">
+                                <rect key="frame" x="-25" y="-30" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="40" y="0.0" width="249" height="30"/>
+                                </variation>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ol2-Tf-G7K">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Répondre"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="57" y="355" width="110" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="repondre:" destination="bpm-s7-MVy" eventType="touchUpInside" id="ZBT-bw-aXQ"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Votre reponse" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="gyF-GL-jFz">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="20" y="64" width="321" height="269"/>
+                                </variation>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="4MO-h4-NL9"/>
+                                <exclude reference="Ol2-Tf-G7K"/>
+                                <exclude reference="gyF-GL-jFz"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="4MO-h4-NL9"/>
+                                <include reference="Ol2-Tf-G7K"/>
+                                <include reference="gyF-GL-jFz"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="textReponseDetaille" destination="gyF-GL-jFz" id="2IY-KR-ok0"/>
+                        <outlet property="texteSujet" destination="4MO-h4-NL9" id="Ia2-4U-oZ9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="k8z-z5-1Q1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2955" y="627"/>
         </scene>
         <!--Liste Reponses Controller-->
         <scene sceneID="J7B-eK-4ag">

@@ -97,7 +97,12 @@ class OffreDemandeController: UIViewController, MKMapViewDelegate{
             dvc.identification=identification
             dvc.idService=idService
         }
-        
+        if(segue.identifier=="repondre"){
+            
+            let dvc=segue.destinationViewController as! RepondreController
+            dvc.identification=identification
+            dvc.idService=idService
+        }
     }
     //
     
