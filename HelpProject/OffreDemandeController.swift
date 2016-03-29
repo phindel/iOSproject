@@ -50,8 +50,8 @@ class OffreDemandeController: UIViewController, MKMapViewDelegate{
                     //(num: ((r.valueForKey("idService")!) as? Int)!,nom: ((r.valueForKey("intituleService")!) as? String)!)
                     datePubA_O.text = " "
                     libelleA_O.text = ((r.valueForKey("intituleService")!) as? String)!
-                    budgetA_O.text = " "
-                    descriptionA_O.text = " "
+                    budgetA_O.text = ((r.valueForKey("budget") as? String)!)
+                    descriptionA_O.text = ((r.valueForKey("description") as? String)!)
                     
                     /*newService.setValue(1, forKey: "attribute")
                     newService.setValue(2, forKey: "coutService")
@@ -72,6 +72,12 @@ class OffreDemandeController: UIViewController, MKMapViewDelegate{
         }catch{
             print("Echec du fetch!")
         }
+        
+        
+        /*
+            Chargement des coordonnées sur la map!
+        */
+        
         
         
         
