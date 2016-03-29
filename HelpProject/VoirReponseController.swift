@@ -10,6 +10,20 @@ import UIKit
 import CoreData
 
 class VoirReponseController: UIViewController {
+    
+    
+    @IBAction func refuserReponse(sender: AnyObject) {
+        
+    }
+    @IBAction func accepterReponse(sender: AnyObject) {
+        
+    }
+    
+    @IBOutlet weak var offreText: UILabel!
+    
+    @IBOutlet weak var sujetText: UILabel!
+    
+    
     @IBOutlet weak var grandTextarea: UITextView!
     
     var idMsg:Int!
@@ -32,9 +46,13 @@ class VoirReponseController: UIViewController {
                     //(num: ((r.valueForKey("idService")!) as? Int)!,nom: ((r.valueForKey("intituleService")!) as? String)!)
                     
                     grandTextarea.text = ((r.valueForKey("msgContent")!) as? String)!
-                    //afficher aussi sujet
+                    sujetText.text = ((r.valueForKey("sujet")!) as? String)!
+                    offreText.text = NSString(format:"%d",((r.valueForKey("sommePropose") as? Int)!)) as String
                     
-                    print("VoirReponseController "+((r.valueForKey("msgContent")!) as? String)!)
+                    //afficher aussi
+                    
+                    //
+                    
                     
                     
                     
