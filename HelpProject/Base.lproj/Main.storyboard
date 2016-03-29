@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="9na-gy-vCt">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="9na-gy-vCt">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
@@ -676,6 +676,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wBi-Tx-NGT">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <state key="normal" title="Contacter M. ..."/>
+                                <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="274" y="364" width="106" height="30"/>
+                                </variation>
                                 <connections>
                                     <action selector="entrerContact:forEvent:" destination="AE2-BX-IZU" eventType="touchUpInside" id="5VP-qC-eEV"/>
                                 </connections>
@@ -718,37 +721,6 @@
                                     <rect key="frame" x="114" y="185" width="260" height="51"/>
                                 </variation>
                             </label>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FvN-K1-Zu8">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                                <items>
-                                    <navigationItem id="sN7-GP-SMU">
-                                        <nil key="title"/>
-                                        <barButtonItem key="leftBarButtonItem" style="plain" id="phb-mO-KDo">
-                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="xm6-VX-t4a">
-                                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="Répondre"/>
-                                                <connections>
-                                                    <segue destination="bpm-s7-MVy" kind="show" identifier="repondre" id="go5-BP-hmQ"/>
-                                                </connections>
-                                            </button>
-                                        </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" style="plain" id="Dkr-8Q-WoP">
-                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Hye-Yc-gbY">
-                                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="Voir les reponses"/>
-                                                <connections>
-                                                    <segue destination="MD0-Ev-4Le" kind="show" identifier="voirReponse" id="9NK-EG-jhy"/>
-                                                </connections>
-                                            </button>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                                <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
-                                    <rect key="frame" x="20" y="72" width="360" height="44"/>
-                                </variation>
-                            </navigationBar>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="k00-Se-QaA">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
@@ -764,26 +736,37 @@
                                     <rect key="frame" x="114" y="126" width="266" height="51"/>
                                 </variation>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gmc-Yo-gqy">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Répondre"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="33" y="80" width="102" height="30"/>
+                                </variation>
+                                <connections>
+                                    <segue destination="bpm-s7-MVy" kind="show" identifier="repondre" id="G6X-he-DWY"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5d3-YY-sDH">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Voir les reponses"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="242" y="80" width="123" height="30"/>
+                                </variation>
+                                <connections>
+                                    <segue destination="MD0-Ev-4Le" kind="show" identifier="voirReponse" id="8s6-VY-SaI"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="7i3-Ez-4W5" secondAttribute="bottom" constant="244" id="1bF-g9-06C"/>
                             <constraint firstItem="7i3-Ez-4W5" firstAttribute="trailing" secondItem="d9Z-lh-wHc" secondAttribute="trailing" id="40C-br-yPI"/>
-                            <constraint firstItem="FvN-K1-Zu8" firstAttribute="leading" secondItem="3UQ-4q-y66" secondAttribute="leadingMargin" constant="8" id="D1O-Ir-BIn"/>
-                            <constraint firstItem="maz-mr-JMS" firstAttribute="top" secondItem="FvN-K1-Zu8" secondAttribute="bottom" constant="13" id="Gx9-Xf-SPB"/>
-                            <constraint firstItem="FvN-K1-Zu8" firstAttribute="trailing" secondItem="3UQ-4q-y66" secondAttribute="trailingMargin" id="IP2-yg-xip"/>
-                            <constraint firstItem="FvN-K1-Zu8" firstAttribute="trailing" secondItem="wBi-Tx-NGT" secondAttribute="trailing" id="P6T-iY-uj9"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="FvN-K1-Zu8" secondAttribute="leading" id="P8L-xg-EuY"/>
                             <constraint firstAttribute="bottom" secondItem="d9Z-lh-wHc" secondAttribute="bottom" constant="20" symbolic="YES" id="YxW-U6-jQY"/>
-                            <constraint firstItem="FvN-K1-Zu8" firstAttribute="trailing" secondItem="3UQ-4q-y66" secondAttribute="trailingMargin" constant="8" id="bSM-3B-d22"/>
                             <constraint firstItem="7i3-Ez-4W5" firstAttribute="trailing" secondItem="VdV-CL-10a" secondAttribute="trailing" id="cEA-eQ-d3A"/>
                             <constraint firstItem="d9Z-lh-wHc" firstAttribute="top" secondItem="wBi-Tx-NGT" secondAttribute="bottom" constant="8" symbolic="YES" id="d5Z-hs-LOV"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="FvN-K1-Zu8" secondAttribute="trailing" id="fZf-Jg-V8X"/>
                             <constraint firstItem="7i3-Ez-4W5" firstAttribute="trailing" secondItem="11E-GF-NkY" secondAttribute="trailing" id="m7F-Fh-alu"/>
                             <constraint firstItem="wBi-Tx-NGT" firstAttribute="top" secondItem="7i3-Ez-4W5" secondAttribute="bottom" constant="8" symbolic="YES" id="mws-o0-hbD"/>
                             <constraint firstItem="7i3-Ez-4W5" firstAttribute="centerX" secondItem="maz-mr-JMS" secondAttribute="centerX" id="rbu-va-aDe"/>
-                            <constraint firstItem="FvN-K1-Zu8" firstAttribute="top" secondItem="5IF-xk-Jn6" secondAttribute="bottom" constant="8" id="rht-tf-da3"/>
-                            <constraint firstItem="FvN-K1-Zu8" firstAttribute="top" secondItem="5IF-xk-Jn6" secondAttribute="bottom" constant="8" id="sXO-xw-2dJ"/>
                             <constraint firstItem="7i3-Ez-4W5" firstAttribute="top" secondItem="pfl-Yd-jFM" secondAttribute="bottom" constant="8" symbolic="YES" id="uvj-ZW-4Kt"/>
                             <constraint firstItem="7i3-Ez-4W5" firstAttribute="top" secondItem="11E-GF-NkY" secondAttribute="bottom" constant="8" symbolic="YES" id="yfG-eM-sEm"/>
                         </constraints>
@@ -795,9 +778,10 @@
                                 <exclude reference="7i3-Ez-4W5"/>
                                 <exclude reference="11E-GF-NkY"/>
                                 <exclude reference="VdV-CL-10a"/>
-                                <exclude reference="FvN-K1-Zu8"/>
                                 <exclude reference="k00-Se-QaA"/>
                                 <exclude reference="maz-mr-JMS"/>
+                                <exclude reference="gmc-Yo-gqy"/>
+                                <exclude reference="5d3-YY-sDH"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="mws-o0-hbD"/>
@@ -808,15 +792,6 @@
                                 <exclude reference="rbu-va-aDe"/>
                                 <exclude reference="uvj-ZW-4Kt"/>
                                 <exclude reference="yfG-eM-sEm"/>
-                                <exclude reference="Gx9-Xf-SPB"/>
-                                <exclude reference="D1O-Ir-BIn"/>
-                                <exclude reference="IP2-yg-xip"/>
-                                <exclude reference="P6T-iY-uj9"/>
-                                <exclude reference="P8L-xg-EuY"/>
-                                <exclude reference="bSM-3B-d22"/>
-                                <exclude reference="fZf-Jg-V8X"/>
-                                <exclude reference="rht-tf-da3"/>
-                                <exclude reference="sXO-xw-2dJ"/>
                                 <exclude reference="YxW-U6-jQY"/>
                                 <exclude reference="d5Z-hs-LOV"/>
                             </mask>
@@ -829,9 +804,10 @@
                                 <include reference="7i3-Ez-4W5"/>
                                 <include reference="11E-GF-NkY"/>
                                 <include reference="VdV-CL-10a"/>
-                                <include reference="FvN-K1-Zu8"/>
                                 <include reference="k00-Se-QaA"/>
                                 <include reference="maz-mr-JMS"/>
+                                <include reference="gmc-Yo-gqy"/>
+                                <include reference="5d3-YY-sDH"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="mws-o0-hbD"/>
@@ -842,15 +818,6 @@
                                 <include reference="rbu-va-aDe"/>
                                 <include reference="uvj-ZW-4Kt"/>
                                 <include reference="yfG-eM-sEm"/>
-                                <include reference="Gx9-Xf-SPB"/>
-                                <exclude reference="D1O-Ir-BIn"/>
-                                <include reference="IP2-yg-xip"/>
-                                <include reference="P6T-iY-uj9"/>
-                                <exclude reference="P8L-xg-EuY"/>
-                                <exclude reference="bSM-3B-d22"/>
-                                <exclude reference="fZf-Jg-V8X"/>
-                                <include reference="rht-tf-da3"/>
-                                <include reference="sXO-xw-2dJ"/>
                                 <include reference="YxW-U6-jQY"/>
                                 <include reference="d5Z-hs-LOV"/>
                             </mask>
@@ -880,46 +847,46 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Sujet" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4MO-h4-NL9">
-                                <rect key="frame" x="-25" y="-30" width="97" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="40" y="0.0" width="249" height="30"/>
-                                </variation>
-                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ol2-Tf-G7K">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <state key="normal" title="Répondre"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="57" y="355" width="110" height="30"/>
+                                    <rect key="frame" x="57" y="367" width="110" height="30"/>
                                 </variation>
                                 <connections>
                                     <action selector="repondre:" destination="bpm-s7-MVy" eventType="touchUpInside" id="ZBT-bw-aXQ"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Sujet" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4MO-h4-NL9">
+                                <rect key="frame" x="-25" y="-30" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="29" y="74" width="249" height="30"/>
+                                </variation>
+                            </textField>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Votre reponse" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="gyF-GL-jFz">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="20" y="64" width="321" height="269"/>
+                                    <rect key="frame" x="20" y="104" width="321" height="269"/>
                                 </variation>
                             </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <variation key="default">
                             <mask key="subviews">
-                                <exclude reference="4MO-h4-NL9"/>
                                 <exclude reference="Ol2-Tf-G7K"/>
+                                <exclude reference="4MO-h4-NL9"/>
                                 <exclude reference="gyF-GL-jFz"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
-                                <include reference="4MO-h4-NL9"/>
                                 <include reference="Ol2-Tf-G7K"/>
+                                <include reference="4MO-h4-NL9"/>
                                 <include reference="gyF-GL-jFz"/>
                             </mask>
                         </variation>

@@ -28,6 +28,7 @@ class OffreDemandeController: UIViewController, MKMapViewDelegate{
     
     var services = [NSManagedObject]()
     
+    @IBOutlet weak var titreVue: UINavigationItem!
     @IBAction func entrerContact(sender: AnyObject, forEvent event: UIEvent) {
         
     }
