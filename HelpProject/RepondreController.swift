@@ -28,6 +28,8 @@ class RepondreController: UIViewController {
         newService.setValue(idService, forKey: "idService")
         newService.setValue(identification.id, forKey: "from")
         newService.setValue(Int(valeurPropose.text!), forKey: "sommePropose")
+        newService.setValue("attente", forKey: "statutAttenteAccepteIgnore")
+        
         
         do{
             try contexte.save()
