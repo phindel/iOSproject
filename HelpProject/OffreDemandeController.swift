@@ -28,6 +28,7 @@ class OffreDemandeController: UIViewController, MKMapViewDelegate{
     
     var services = [NSManagedObject]()
     
+    @IBOutlet weak var titreVue: UINavigationItem!
     @IBAction func entrerContact(sender: AnyObject, forEvent event: UIEvent) {
         
     }
@@ -50,9 +51,9 @@ class OffreDemandeController: UIViewController, MKMapViewDelegate{
                     //(num: ((r.valueForKey("idService")!) as? Int)!,nom: ((r.valueForKey("intituleService")!) as? String)!)
                     datePubA_O.text = " "
                     libelleA_O.text = ((r.valueForKey("intituleService")!) as? String)!
-                    budgetA_O.text = ((r.valueForKey("budget") as? String)!)
-                    descriptionA_O.text = ((r.valueForKey("description") as? String)!)
-                    
+                    budgetA_O.text = NSString(format:"%d",((r.valueForKey("coutService") as? Double)!)) as String
+                    descriptionA_O.text = ((r.valueForKey("descriptionService") as? String)!)
+                    //titreVue.title="Service "+((r.valueForKey("intituleService")!) as? String)!
                     /*newService.setValue(1, forKey: "attribute")
                     newService.setValue(2, forKey: "coutService")
                     newService.setValue(NSDate(timeIntervalSinceNow: 10), forKey: "dateDebutDispo")
