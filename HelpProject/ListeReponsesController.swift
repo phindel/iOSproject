@@ -35,7 +35,8 @@ class ListeReponsesController: BDDTableViewController {
     // MARK: - Table view data source
     
     override func ajouterDansTable(c:Int,r:NSManagedObject ){
-        tableCacheBDD[c]=NumEtNom(num: ((r.valueForKey("idMsg")!) as? Int)!,nom: ((r.valueForKey("msgContent")!) as? String)!)//((r.valueForKey("b")!) as? String)!
+        tableCacheBDD[c]=NumEtNom(num: ((r.valueForKey("idMsg")!) as? Int)!,nom: ((r.valueForKey("sujet")!) as? String)!)//((r.valueForKey("b")!) as? String)!
+        //msgContent
     }
     override func ajouterCritere(req:NSFetchRequest){
         let ser=NSString(format:"%d",idService)

@@ -32,10 +32,9 @@ class VoirReponseController: UIViewController {
                     //(num: ((r.valueForKey("idService")!) as? Int)!,nom: ((r.valueForKey("intituleService")!) as? String)!)
                     
                     grandTextarea.text = ((r.valueForKey("msgContent")!) as? String)!
-                   
+                    //afficher aussi sujet
                     
-                    
-                    
+                    print("VoirReponseController "+((r.valueForKey("msgContent")!) as? String)!)
                     
                     
                     
