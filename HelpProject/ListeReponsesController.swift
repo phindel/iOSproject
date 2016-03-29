@@ -40,8 +40,8 @@ class ListeReponsesController: BDDTableViewController {
     }
     override func ajouterCritere(req:NSFetchRequest){
         let ser=NSString(format:"%d",idService)
-        req.predicate=NSPredicate(format: "idService=%@",ser)
-    }
+        req.predicate=NSPredicate(format: " (idService=%@ ) and (statutAttenteAccepteIgnore='attente')",ser)
+    }//attente", forKey: "statutAttenteAccepteIgnore
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         print("tableView cellForRowAtIndexPath")
         let cell = tableView.dequeueReusableCellWithIdentifier("typeReponse", forIndexPath: indexPath)

@@ -12,6 +12,7 @@ import CoreData
 class RepondreController: UIViewController {
     @IBOutlet weak var textReponseDetaille: UITextView!
     
+    @IBOutlet weak var valeurPropose: UITextField!
     @IBOutlet weak var texteSujet: UITextField!
     var identification: Identification!
     var idService:Int!
@@ -26,6 +27,10 @@ class RepondreController: UIViewController {
         newService.setValue(textReponseDetaille.text, forKey: "msgContent")
         newService.setValue(idService, forKey: "idService")
         newService.setValue(identification.id, forKey: "from")
+        newService.setValue(Int(valeurPropose.text!), forKey: "sommePropose")
+        newService.setValue("attente", forKey: "statutAttenteAccepteIgnore")
+        
+        
         do{
             try contexte.save()
             //performSegueWithIdentifier("retourListeParCategorie", sender: 1)
