@@ -12,12 +12,41 @@ import CoreData
 class VoirReponseController: UIViewController {
     
     @IBOutlet weak var proposeur: UITextField!
-    
-    @IBAction func refuserReponse(sender: AnyObject) {
+    func rechReponse()throws -> [AnyObject]{
+        let appDel:AppDelegate=UIApplication.sharedApplication().delegate as! AppDelegate
+        let contexte:NSManagedObjectContext=appDel.managedObjectContext
+        let req=NSFetchRequest(entityName: "Message")
+        req.returnsObjectsAsFaults=false
         
+        req.predicate=NSPredicate(format: "idMsg = %@", NSString(format:"%d",idMsg))
+        let res=try contexte.executeFetchRequest(req)
+        return res
+    }
+    @IBAction func refuserReponse(sender: AnyObject) {
+        do{
+            let res=try rechReponse()
+            if res.count>0{
+                for r in res as! [NSManagedObject]{
+                    r.setValue("ignore",forKey:"statutAttenteAccepteIgnore")
+                }
+            }
+            navigationController?.popViewControllerAnimated(false)
+        }catch{
+            print("Echec du fetch!")
+        }
     }
     @IBAction func accepterReponse(sender: AnyObject) {
-        
+        do{
+            let res=try rechReponse()
+            if res.count>0{
+                for r in res as! [NSManagedObject]{
+                    r.setValue("accepte",forKey:"statutAttenteAccepteIgnore")
+                }
+            }
+            navigationController?.popViewControllerAnimated(false)
+        }catch{
+            print("Echec du fetch!")
+        }
     }
     
     @IBOutlet weak var offreText: UILabel!
@@ -30,15 +59,10 @@ class VoirReponseController: UIViewController {
     var idMsg:Int!
     override func viewDidLoad() {
         super.viewDidLoad()
-        let appDel:AppDelegate=UIApplication.sharedApplication().delegate as! AppDelegate
-        let contexte:NSManagedObjectContext=appDel.managedObjectContext
-        let req=NSFetchRequest(entityName: "Message")
-        req.returnsObjectsAsFaults=false
-
-        req.predicate=NSPredicate(format: "idMsg = %@", NSString(format:"%d",idMsg))
+        
         var idPerson=0
         do{
-            let res=try contexte.executeFetchRequest(req)
+            let res=try rechReponse()
             if res.count>0{
                 for r in res as! [NSManagedObject]{
                     //print(r.valueForKey("nomCategorie")!)
@@ -60,6 +84,8 @@ class VoirReponseController: UIViewController {
         reqp.predicate=NSPredicate(format: "idPerson = %@", NSString(format:"%d",idPerson))
         
         do{
+            let appDel:AppDelegate=UIApplication.sharedApplication().delegate as! AppDelegate
+            let contexte:NSManagedObjectContext=appDel.managedObjectContext
             let res=try contexte.executeFetchRequest(reqp)
             if res.count>0{
                 for r in res as! [NSManagedObject]{

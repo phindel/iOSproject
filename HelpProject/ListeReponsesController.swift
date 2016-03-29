@@ -12,13 +12,12 @@ import CoreData
 class ListeReponsesController: BDDTableViewController {
     
     var idService:Int!
+    
+    /*override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)*/
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
         initialiser("Message", champAAfficherBDD: "__inutile__")
-        
-        
     }
     
     
@@ -41,6 +40,7 @@ class ListeReponsesController: BDDTableViewController {
     override func ajouterCritere(req:NSFetchRequest){
         let ser=NSString(format:"%d",idService)
         req.predicate=NSPredicate(format: " (idService=%@ ) and (statutAttenteAccepteIgnore='attente')",ser)
+        //
     }//attente", forKey: "statutAttenteAccepteIgnore
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         print("tableView cellForRowAtIndexPath")
@@ -60,6 +60,7 @@ class ListeReponsesController: BDDTableViewController {
                 let nen=tableCacheBDD[(indice.first?.item)!] as! NumEtNom as NumEtNom!
                 //dvc.categorie=nen.nom//tableCacheBDD[(indice.first?.item)!] as! String as String!
                 //dvc.identification=identification
+                
                 dvc.idMsg=nen.num
             }
         }
