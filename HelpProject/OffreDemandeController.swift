@@ -46,28 +46,29 @@ class OffreDemandeController: UIViewController, MKMapViewDelegate{
         do{
             let res=try contexte.executeFetchRequest(req)
             if res.count>0{
+                print("10")
                 for r in res as! [NSManagedObject]{
+                    
+                    print("111")
+                    
                     //print(r.valueForKey("nomCategorie")!)
                     //(num: ((r.valueForKey("idService")!) as? Int)!,nom: ((r.valueForKey("intituleService")!) as? String)!)
-                    datePubA_O.text = " "
+                    
+                    
                     libelleA_O.text = ((r.valueForKey("intituleService")!) as? String)!
-                    budgetA_O.text = NSString(format:"%d",((r.valueForKey("coutService") as? Double)!)) as String
+                    
+                    budgetA_O.text = String(((r.valueForKey("coutService") as? Double)))
+                    
                     descriptionA_O.text = ((r.valueForKey("descriptionService") as? String)!)
-                    //titreVue.title="Service "+((r.valueForKey("intituleService")!) as? String)!
-                    /*newService.setValue(1, forKey: "attribute")
-                    newService.setValue(2, forKey: "coutService")
-                    newService.setValue(NSDate(timeIntervalSinceNow: 10), forKey: "dateDebutDispo")
-                    newService.setValue(NSDate(timeIntervalSinceNow: 100), forKey: "dateFinDispo")
-                    newService.setValue(10, forKey: "duree")
-                    newService.setValue(100, forKey: "idService")
-                    newService.setValue("Mon joli service", forKey: "intituleService")
-                    newService.setValue(true, forKey: "offreOuDemande")
-                    newService.setValue("cat 1", forKey: "categorie")
-                    newService.setValue("Description du service", forKey: "descriptionService")*/
+                    var dateFormatter = NSDateFormatter()
+                    dateFormatter.dateFormat = "hh:mm"
+                   datePubA_O.text = dateFormatter.stringFromDate(((r.valueForKey("datePubDispo") as? NSDate)!))
+                   
+                    /*
                     
+                    */
                     
-                    
-                    
+                    print("101")
                 }
             }
         }catch{
