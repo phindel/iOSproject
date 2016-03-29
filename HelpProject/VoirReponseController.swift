@@ -11,6 +11,7 @@ import CoreData
 
 class VoirReponseController: UIViewController {
     
+    @IBOutlet weak var proposeur: UITextField!
     
     @IBAction func refuserReponse(sender: AnyObject) {
         
@@ -33,11 +34,9 @@ class VoirReponseController: UIViewController {
         let contexte:NSManagedObjectContext=appDel.managedObjectContext
         let req=NSFetchRequest(entityName: "Message")
         req.returnsObjectsAsFaults=false
-        
-        
-        
+
         req.predicate=NSPredicate(format: "idMsg = %@", NSString(format:"%d",idMsg))
-        
+        var idPerson=0
         do{
             let res=try contexte.executeFetchRequest(req)
             if res.count>0{
@@ -48,21 +47,28 @@ class VoirReponseController: UIViewController {
                     grandTextarea.text = ((r.valueForKey("msgContent")!) as? String)!
                     sujetText.text = ((r.valueForKey("sujet")!) as? String)!
                     offreText.text = NSString(format:"%d",((r.valueForKey("sommePropose") as? Int)!)) as String
-                    
-                    //afficher aussi
-                    
-                    //
-                    
-                    
-                    
-                    
+                    idPerson=((r.valueForKey("from") as? Int)!)
                 }
             }
         }catch{
             print("Echec du fetch!")
         }
         
+        let reqp=NSFetchRequest(entityName: "Person")
+        reqp.returnsObjectsAsFaults=false
         
+        reqp.predicate=NSPredicate(format: "idPerson = %@", NSString(format:"%d",idPerson))
+        
+        do{
+            let res=try contexte.executeFetchRequest(reqp)
+            if res.count>0{
+                for r in res as! [NSManagedObject]{
+                    proposeur.text = ((r.valueForKey("login")!) as? String)!+" vous propose"
+                }
+            }
+        }catch{
+            print("Echec du fetch!")
+        }
         
     }
 }
