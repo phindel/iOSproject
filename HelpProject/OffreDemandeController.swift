@@ -48,10 +48,14 @@ class OffreDemandeController: UIViewController, MKMapViewDelegate{
                 for r in res as! [NSManagedObject]{
                     //print(r.valueForKey("nomCategorie")!)
                     //(num: ((r.valueForKey("idService")!) as? Int)!,nom: ((r.valueForKey("intituleService")!) as? String)!)
+                    
                     datePubA_O.text = " "
+                    
                     libelleA_O.text = ((r.valueForKey("intituleService")!) as? String)!
-                    budgetA_O.text = ((r.valueForKey("budget") as? String)!)
-                    descriptionA_O.text = ((r.valueForKey("description") as? String)!)
+                    
+                    budgetA_O.text = String(((r.valueForKey("coutService") as? Double)))
+                    
+                    descriptionA_O.text =  ((r.valueForKey("descriptionService") as? String)!)
                     
                     /*newService.setValue(1, forKey: "attribute")
                     newService.setValue(2, forKey: "coutService")
@@ -63,8 +67,6 @@ class OffreDemandeController: UIViewController, MKMapViewDelegate{
                     newService.setValue(true, forKey: "offreOuDemande")
                     newService.setValue("cat 1", forKey: "categorie")
                     newService.setValue("Description du service", forKey: "descriptionService")*/
-                    
-                    
                     
                     
                 }
