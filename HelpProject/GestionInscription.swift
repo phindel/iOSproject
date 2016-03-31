@@ -7,11 +7,11 @@
 //
 
 import UIKit
+import CoreData
 
 class GestionInscription: UIViewController {
     
     
-    @IBOutlet var personLogin: UITextField!
     @IBOutlet var passTwo: UITextField!
     @IBOutlet var passOne: UITextField!
     @IBOutlet var login: UITextField!
@@ -31,50 +31,50 @@ class GestionInscription: UIViewController {
     
     @IBAction func addNewPerson(sender: AnyObject) {
         
+        let appDel:AppDelegate=UIApplication.sharedApplication().delegate as! AppDelegate
+        let contexte:NSManagedObjectContext=appDel.managedObjectContext
+        let req=NSFetchRequest(entityName: "Person")
+        req.returnsObjectsAsFaults=false
+        req.predicate=NSPredicate(format: "login = %@",login!.text!)
+        var c=0
+        do{
+            let res=try contexte.executeFetchRequest(req)
+            if res.count>0{
+                let r=res.first as! NSManagedObject
+               let passwd = ((r.valueForKey("password")!) as? String)!
+             var idPerson = ((r.valueForKey("idPerson")!) as? Int)!
+                if passwd == passOne!.text! {
+                    // Message user existe
+                    
+                    performSegueWithIdentifier("afficherListeCategorie",sender: "")
+                }/*
+                else {
+                    // add user in the table!
+                    let entityDescription = NSEntityDescription.entityForName("Person", inManagedObjectContext: managedObjectContext)
+                    let newPerson = NSManagedObject(entity: entityDescription!, insertIntoManagedObjectContext: self.managedObjectContext)
+                    newPerson.setValue(" ", forkey: )
+                    newPerson.setValue(" ", forkey: )
+                }
+                */
+                
+                c+=1 //swift ne supporte pas c++
+                
+                //}
+            }
+        }catch{
+            print("Echec du fetch!")
+        }
+
+        
+        
+        
         var addressPerson = ""
         
-        addressPerson += numRue.text!
+        /*addressPerson += numRue.text!
         addressPerson += " "
         addressPerson += nomRue.text!
         addressPerson += codePostal.text!
-        var latitude = 0.0
-        var longitude = 0.0
-        /*
-        (CLLocationCoordiante2D) geoCodeUsingAddress: (NSString *)addressPersonn
-        {
-            NSString
-            
-        }
         */
-        /*
-
-        (CLLocationCoordinate2D) geoCodeUsingAddress:(NSString *)address
-        {
-        
-        NSString *esc_addr =  [address stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-        NSString *req = [NSString stringWithFormat:@"http://maps.google.com/maps/api/geocode/json?sensor=false&address=%@", esc_addr];
-        NSString *result = [NSString stringWithContentsOfURL:[NSURL URLWithString:req] encoding:NSUTF8StringEncoding error:NULL];
-        if (result) {
-        NSScanner *scanner = [NSScanner scannerWithString:result];
-        if ([scanner scanUpToString:@"\"lat\":" intoString:nil] && [scanner scanString:@"\"lat\":" intoString:nil]) {
-        [scanner scanDouble:&latitude];
-        if ([scanner scanUpToString:@"\"lng\":" intoString:nil] && [scanner scanString:@"\"lng\":" intoString:nil]) {
-        [scanner scanDouble:&longitude];
-        }
-        }
-        }
-        CLLocationCoordinate2D center;
-        center.latitude = latitude;
-        center.longitude = longitude;
-        return center;
-        }
-
-        */
-        
-        
-        
-        
-        
         
         
         
