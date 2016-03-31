@@ -37,12 +37,20 @@ class GestionInscription: UIViewController {
         addressPerson += " "
         addressPerson += nomRue.text!
         addressPerson += codePostal.text!
-        
+        var latitude = 0.0
+        var longitude = 0.0
+        /*
+        (CLLocationCoordiante2D) geoCodeUsingAddress: (NSString *)addressPersonn
+        {
+            NSString
+            
+        }
+        */
         /*
 
         (CLLocationCoordinate2D) geoCodeUsingAddress:(NSString *)address
         {
-        double latitude = 0, longitude = 0;
+        
         NSString *esc_addr =  [address stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
         NSString *req = [NSString stringWithFormat:@"http://maps.google.com/maps/api/geocode/json?sensor=false&address=%@", esc_addr];
         NSString *result = [NSString stringWithContentsOfURL:[NSURL URLWithString:req] encoding:NSUTF8StringEncoding error:NULL];
