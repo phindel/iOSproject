@@ -24,10 +24,17 @@ class VoirReponseController: UIViewController {
     }
     @IBAction func refuserReponse(sender: AnyObject) {
         do{
-            let res=try rechReponse()
+            let appDel:AppDelegate=UIApplication.sharedApplication().delegate as! AppDelegate
+            let contexte:NSManagedObjectContext=appDel.managedObjectContext
+            let req=NSFetchRequest(entityName: "Message")
+            req.returnsObjectsAsFaults=false
+            
+            req.predicate=NSPredicate(format: "idMsg = %@", NSString(format:"%d",idMsg))
+            let res=try contexte.executeFetchRequest(req)
             if res.count>0{
                 for r in res as! [NSManagedObject]{
-                    r.setValue("ignore",forKey:"statutAttenteAccepteIgnore")
+                    //r.setValue("ignore",forKey:"statutAttenteAccepteIgnore")
+                    contexte.deleteObject(r)
                 }
             }
             navigationController?.popViewControllerAnimated(false)

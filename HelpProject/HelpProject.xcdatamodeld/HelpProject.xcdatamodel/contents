@@ -35,11 +35,12 @@
         <attribute name="initiateur" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="intituleService" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="offreOuDemande" optional="YES" attributeType="Boolean" defaultValueString="0" syncable="YES"/>
+        <attribute name="partenaire" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
     </entity>
     <elements>
         <element name="Categorie" positionX="-54" positionY="18" width="128" height="104"/>
         <element name="Message" positionX="-18" positionY="99" width="128" height="150"/>
         <element name="Person" positionX="-63" positionY="-18" width="128" height="120"/>
-        <element name="Service" positionX="-200" positionY="126" width="128" height="208"/>
+        <element name="Service" positionX="-200" positionY="126" width="128" height="225"/>
     </elements>
 </model>
