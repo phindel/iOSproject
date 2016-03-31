@@ -40,7 +40,9 @@ class AttenteNotationController: BDDTableViewController {
             personneANoter="initiateur"
         }
         
-        tableCacheBDD[c]=NumEtNom(num: ((r.valueForKey(personneANoter)!) as? Int)!,nom: ((r.valueForKey("intituleService")!) as? String)!)//((r.valueForKey("b")!) as? String)!
+        let nn=NumEtNom(num: ((r.valueForKey(personneANoter)!) as? Int)!,nom: ((r.valueForKey("intituleService")!) as? String)!)//((r.valueForKey("b")!) as? String)!
+        nn.num2=((r.valueForKey("idService")!) as? Int)!
+        tableCacheBDD[c]=nn
         //msgContent
     }
     override func ajouterCritere(req:NSFetchRequest){
@@ -74,6 +76,8 @@ class AttenteNotationController: BDDTableViewController {
                 //dvc.identification=identification
                 dvc.identification=identification
                 dvc.personneANoter=nen.num
+                dvc.idService=nen.num2
+                
             }
         }
         

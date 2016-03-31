@@ -15,4 +15,5 @@ class NumEtNom{
         self.num=num
         self.nom=nom
     }
+    var num2=0
 }
