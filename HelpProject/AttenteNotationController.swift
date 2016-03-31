@@ -67,13 +67,13 @@ class AttenteNotationController: BDDTableViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if(segue.identifier=="segueNoter"){
             if let indice = tableView.indexPathsForSelectedRows{
-                let dvc=segue.destinationViewController as! VoirReponseController
+                let dvc=segue.destinationViewController as! NoterPersonController
                 //print((indice.first?.item)!)
                 let nen=tableCacheBDD[(indice.first?.item)!] as! NumEtNom as NumEtNom!
                 //dvc.categorie=nen.nom//tableCacheBDD[(indice.first?.item)!] as! String as String!
                 //dvc.identification=identification
-                
-                dvc.idMsg=nen.num
+                dvc.identification=identification
+                dvc.personneANoter=nen.num
             }
         }
         

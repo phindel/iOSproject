@@ -9,5 +9,7 @@
 import UIKit
 
 class NoterPersonController: UIViewController {
-
+    var identification: Identification!
+    var personneANoter:Int!
+    
 }
