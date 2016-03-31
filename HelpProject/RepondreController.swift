@@ -21,14 +21,14 @@ class RepondreController: UIViewController {
         let appDel:AppDelegate=UIApplication.sharedApplication().delegate as! AppDelegate
         let contexte:NSManagedObjectContext=appDel.managedObjectContext
         
-        let newService=NSEntityDescription.insertNewObjectForEntityForName("Message", inManagedObjectContext: contexte)
-        newService.setValue(100, forKey: "idMsg")//TODO 100
-        newService.setValue(texteSujet.text, forKey: "sujet")
-        newService.setValue(textReponseDetaille.text, forKey: "msgContent")
-        newService.setValue(idService, forKey: "idService")
-        newService.setValue(identification.id, forKey: "from")
-        newService.setValue(Int(valeurPropose.text!), forKey: "sommePropose")
-        newService.setValue("attente", forKey: "statutAttenteAccepteIgnore")
+        let newMessage=NSEntityDescription.insertNewObjectForEntityForName("Message", inManagedObjectContext: contexte)
+        newMessage.setValue(100, forKey: "idMsg")//TODO 100
+        newMessage.setValue(texteSujet.text, forKey: "sujet")
+        newMessage.setValue(textReponseDetaille.text, forKey: "msgContent")
+        newMessage.setValue(idService, forKey: "idService")
+        newMessage.setValue(identification.id, forKey: "from")
+        newMessage.setValue(Int(valeurPropose.text!), forKey: "sommePropose")
+        newMessage.setValue("attente", forKey: "statutAttenteAccepteIgnore")
         
         
         do{

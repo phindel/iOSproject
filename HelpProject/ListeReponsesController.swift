@@ -60,8 +60,9 @@ class ListeReponsesController: BDDTableViewController {
                 let nen=tableCacheBDD[(indice.first?.item)!] as! NumEtNom as NumEtNom!
                 //dvc.categorie=nen.nom//tableCacheBDD[(indice.first?.item)!] as! String as String!
                 //dvc.identification=identification
-                
+                dvc.identification=identification
                 dvc.idMsg=nen.num
+                dvc.idService=idService
             }
         }
         
