@@ -5,8 +5,34 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
     </dependencies>
     <scenes>
+        <!--Attente Notation Controller-->
+        <scene sceneID="yKY-Vv-aXt">
+            <objects>
+                <tableViewController id="Tyv-ca-kAI" customClass="AttenteNotationController" customModule="HelpProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="QEK-DN-2tm">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="typeNotation" id="49E-oM-IDE">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="49E-oM-IDE" id="LSp-Tm-vBL">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Tyv-ca-kAI" id="cxB-C7-4an"/>
+                            <outlet property="delegate" destination="Tyv-ca-kAI" id="ySD-f9-rsq"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GlQ-zX-YOA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="529.5" y="-158"/>
+        </scene>
         <!--Liste des categories-->
         <scene sceneID="Zzm-Vm-yhe">
             <objects>
@@ -45,16 +71,23 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="A4Y-Ma-WNy">
                         <nil key="title"/>
-                        <barButtonItem key="leftBarButtonItem" style="plain" id="XRT-hT-Cyn">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="dvi-VG-TZl">
-                                <rect key="frame" x="20" y="7" width="240" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Remplir BDD"/>
+                        <leftBarButtonItems>
+                            <barButtonItem title="Noter" id="HP9-a0-gSH">
                                 <connections>
-                                    <action selector="remplirBDD:" destination="3lz-OC-cgZ" eventType="touchDown" id="rTs-XW-PMy"/>
+                                    <segue destination="Tyv-ca-kAI" kind="show" id="bQe-BC-3HS"/>
                                 </connections>
-                            </button>
-                        </barButtonItem>
+                            </barButtonItem>
+                            <barButtonItem style="plain" id="XRT-hT-Cyn">
+                                <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="dvi-VG-TZl">
+                                    <rect key="frame" x="20" y="7" width="240" height="30"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <state key="normal" title="Remplir BDD"/>
+                                    <connections>
+                                        <action selector="remplirBDD:" destination="3lz-OC-cgZ" eventType="touchDown" id="rTs-XW-PMy"/>
+                                    </connections>
+                                </button>
+                            </barButtonItem>
+                        </leftBarButtonItems>
                         <barButtonItem key="rightBarButtonItem" style="plain" id="Vj1-O4-hsm">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="h17-e5-U8S">
                                 <rect key="frame" x="447" y="7" width="133" height="30"/>
@@ -80,7 +113,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t8l-Uj-tYu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="633" y="62"/>
+            <point key="canvasLocation" x="561" y="298"/>
         </scene>
         <!--Liste par categorie-->
         <scene sceneID="vVt-wd-MHd">
@@ -134,7 +167,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zy2-l0-DAe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="201" y="1150"/>
+            <point key="canvasLocation" x="33" y="1620"/>
         </scene>
         <!--ListeMessages-->
         <scene sceneID="BuI-ow-TCN">
@@ -157,7 +190,7 @@
         <!--Inscription-->
         <scene sceneID="Wuq-zv-ezY">
             <objects>
-                <viewController title="Inscription" id="T2h-fR-cNp" sceneMemberID="viewController">
+                <viewController title="Inscription" id="T2h-fR-cNp" customClass="GestionInscription" customModule="HelpProject" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="XRV-7q-Be2"/>
                         <viewControllerLayoutGuide type="bottom" id="fNc-yQ-Dbk"/>
@@ -195,24 +228,6 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="N° Rue" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="om6-xq-KQN">
-                                <rect key="frame" x="-25" y="-30" width="97" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="130" id="O35-8F-SXz"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="O35-8F-SXz"/>
-                                    </mask>
-                                </variation>
-                                <variation key="widthClass=compact">
-                                    <mask key="constraints">
-                                        <include reference="O35-8F-SXz"/>
-                                    </mask>
-                                </variation>
-                            </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nom de la voie" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3j9-0I-gze">
                                 <rect key="frame" x="-25" y="-30" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
@@ -224,11 +239,6 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Ville" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Bpm-If-yND">
-                                <rect key="frame" x="-25" y="-30" width="97" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="login" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fkf-oF-z3w">
                                 <rect key="frame" x="-25" y="-30" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -257,6 +267,29 @@
                                     <segue destination="AE2-BX-IZU" kind="show" id="5bp-ga-shN"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="N° Rue" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="om6-xq-KQN">
+                                <rect key="frame" x="-25" y="-30" width="97" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="130" id="O35-8F-SXz"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="O35-8F-SXz"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="O35-8F-SXz"/>
+                                    </mask>
+                                </variation>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="login" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fkf-oF-z3w">
+                                <rect key="frame" x="-25" y="-30" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -321,12 +354,12 @@
                                 <exclude reference="B1q-g8-xDi"/>
                                 <exclude reference="TVR-Gp-hZO"/>
                                 <exclude reference="c3z-c5-Uic"/>
-                                <exclude reference="om6-xq-KQN"/>
                                 <exclude reference="3j9-0I-gze"/>
                                 <exclude reference="lUu-lh-BbV"/>
                                 <exclude reference="Bpm-If-yND"/>
-                                <exclude reference="fkf-oF-z3w"/>
                                 <exclude reference="5HQ-Io-zh0"/>
+                                <exclude reference="om6-xq-KQN"/>
+                                <exclude reference="fkf-oF-z3w"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="nuC-rl-iKx"/>
@@ -391,12 +424,12 @@
                                 <include reference="B1q-g8-xDi"/>
                                 <include reference="TVR-Gp-hZO"/>
                                 <include reference="c3z-c5-Uic"/>
-                                <include reference="om6-xq-KQN"/>
                                 <include reference="3j9-0I-gze"/>
                                 <include reference="lUu-lh-BbV"/>
                                 <include reference="Bpm-If-yND"/>
-                                <include reference="fkf-oF-z3w"/>
                                 <include reference="5HQ-Io-zh0"/>
+                                <include reference="om6-xq-KQN"/>
+                                <include reference="fkf-oF-z3w"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="nuC-rl-iKx"/>
@@ -457,10 +490,15 @@
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="login" destination="fkf-oF-z3w" id="4jh-tH-zTI"/>
+                        <outlet property="passOne" destination="B1q-g8-xDi" id="wQ7-2J-nny"/>
+                        <outlet property="passTwo" destination="TVR-Gp-hZO" id="DFU-Qh-0is"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uLo-QM-uXf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="807" y="990"/>
+            <point key="canvasLocation" x="760.5" y="903"/>
         </scene>
         <!--Connexion-->
         <scene sceneID="m37-9C-8KA">
@@ -644,7 +682,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YC7-AA-HG7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="10.5" y="1087"/>
+            <point key="canvasLocation" x="-610.5" y="1124"/>
         </scene>
         <!--DetailsOfferOrAnnonce-->
         <scene sceneID="AV0-AK-xzX">
@@ -1165,8 +1203,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="5bp-ga-shN"/>
-        <segue reference="fhE-mR-LmE"/>
         <segue reference="Oih-zT-aDb"/>
+        <segue reference="fhE-mR-LmE"/>
+        <segue reference="5bp-ga-shN"/>
     </inferredMetricsTieBreakers>
 </document>
