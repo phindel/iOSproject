@@ -29,9 +29,7 @@ class AttenteNotationController: BDDTableViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    var listeDesDemandes=false
-    var categorie=""
-    // MARK: - Table view data source
+    
     
     override func ajouterDansTable(c:Int,r:NSManagedObject ){
         var personneANoter=""
@@ -49,9 +47,11 @@ class AttenteNotationController: BDDTableViewController {
         
         //cas offre: si on a accepte l'offre
         //cas demande: si on est le demandeur et qu'il y a un accepteur
-        //let ser=NSString(format:"%d",idService)
-        //req.predicate=NSPredicate(format: " (idService=%@ ) and (statutAttenteAccepteIgnore='attente')",ser)//offreOuDemande partenaire
-        req.predicate=NSPredicate(format: " ((offreOuDemande) and (partenaire=%@)) or ((not offreOuDemande) and (initiateur=%@))",identification.id,identification.id)
+        //req.predicate=NSPredicate(format: " ((offreOuDemande=true) and (partenaire=%@)) or ((offreOuDemande=false) and (initiateur=%@))",identification.id,identification.id)
+        let id=NSString(format:"%d",identification.id)
+        //req.predicate=NSPredicate(format: " ( partenaire=%@ ) ",NSString(format:"%d",id))
+        req.predicate=NSPredicate(format: " ((offreOuDemande=true) and (partenaire=%@)) or ((offreOuDemande=false) and (initiateur=%@))",id,id)
+        
         //
     }//attente", forKey: "statutAttenteAccepteIgnore
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -62,10 +62,10 @@ class AttenteNotationController: BDDTableViewController {
         return cell
     }
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        performSegueWithIdentifier("noter", sender: indexPath.row)
+        performSegueWithIdentifier("segueNoter", sender: indexPath.row)
     }
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if(segue.identifier=="noter"){
+        if(segue.identifier=="segueNoter"){
             if let indice = tableView.indexPathsForSelectedRows{
                 let dvc=segue.destinationViewController as! VoirReponseController
                 //print((indice.first?.item)!)
