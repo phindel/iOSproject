@@ -80,7 +80,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t8l-Uj-tYu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="930" y="52"/>
+            <point key="canvasLocation" x="633" y="62"/>
         </scene>
         <!--Liste par categorie-->
         <scene sceneID="vVt-wd-MHd">
@@ -134,7 +134,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zy2-l0-DAe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="867" y="713"/>
+            <point key="canvasLocation" x="201" y="1150"/>
         </scene>
         <!--ListeMessages-->
         <scene sceneID="BuI-ow-TCN">
@@ -152,7 +152,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qBC-pR-QHc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1665" y="57"/>
+            <point key="canvasLocation" x="1351.5" y="62"/>
         </scene>
         <!--Inscription-->
         <scene sceneID="Wuq-zv-ezY">
@@ -460,7 +460,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uLo-QM-uXf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1404" y="775"/>
+            <point key="canvasLocation" x="807" y="990"/>
         </scene>
         <!--Connexion-->
         <scene sceneID="m37-9C-8KA">
@@ -644,7 +644,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YC7-AA-HG7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="529.5" y="1069"/>
+            <point key="canvasLocation" x="10.5" y="1087"/>
         </scene>
         <!--DetailsOfferOrAnnonce-->
         <scene sceneID="AV0-AK-xzX">
@@ -663,13 +663,13 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
+                                <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
                                     <rect key="frame" x="20" y="276" width="74" height="21"/>
                                 </variation>
                             </label>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="d9Z-lh-wHf">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="d9Z-lh-wHf">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
+                                <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="20" y="402" width="354" height="178"/>
                                 </variation>
                             </mapView>
@@ -678,7 +678,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
+                                <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
                                     <rect key="frame" x="20" y="305" width="354" height="51"/>
                                 </variation>
                             </label>
@@ -687,7 +687,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
+                                <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
                                     <rect key="frame" x="304" y="276" width="70" height="21"/>
                                 </variation>
                             </label>
@@ -696,7 +696,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
+                                <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
                                     <rect key="frame" x="114" y="185" width="260" height="51"/>
                                 </variation>
                             </label>
@@ -711,7 +711,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
+                                <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
                                     <rect key="frame" x="114" y="126" width="266" height="51"/>
                                 </variation>
                             </label>
@@ -737,7 +737,7 @@
                             </button>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="d9Z-lh-wHc">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
+                                <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
                                     <rect key="frame" x="20" y="357" width="354" height="178"/>
                                 </variation>
                             </mapView>
@@ -756,7 +756,6 @@
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="pfl-Yd-jFM"/>
-                                <exclude reference="d9Z-lh-wHc"/>
                                 <exclude reference="7i3-Ez-4W5"/>
                                 <exclude reference="11E-GF-NkY"/>
                                 <exclude reference="VdV-CL-10a"/>
@@ -764,6 +763,7 @@
                                 <exclude reference="maz-mr-JMS"/>
                                 <exclude reference="gmc-Yo-gqy"/>
                                 <exclude reference="5d3-YY-sDH"/>
+                                <exclude reference="d9Z-lh-wHc"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="1bF-g9-06C"/>
@@ -779,7 +779,6 @@
                         <variation key="widthClass=compact">
                             <mask key="subviews">
                                 <include reference="pfl-Yd-jFM"/>
-                                <include reference="d9Z-lh-wHc"/>
                                 <include reference="7i3-Ez-4W5"/>
                                 <include reference="11E-GF-NkY"/>
                                 <include reference="VdV-CL-10a"/>
@@ -787,6 +786,7 @@
                                 <include reference="maz-mr-JMS"/>
                                 <include reference="gmc-Yo-gqy"/>
                                 <include reference="5d3-YY-sDH"/>
+                                <include reference="d9Z-lh-wHc"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="1bF-g9-06C"/>
@@ -1165,8 +1165,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Oih-zT-aDb"/>
+        <segue reference="5bp-ga-shN"/>
         <segue reference="fhE-mR-LmE"/>
-        <segue reference="znx-4v-T4m"/>
+        <segue reference="Oih-zT-aDb"/>
     </inferredMetricsTieBreakers>
 </document>
