@@ -20,6 +20,7 @@
 		B3ADFB6D1C9B1EF2008E5A91 /* Identification.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3ADFB6C1C9B1EF2008E5A91 /* Identification.swift */; };
 		B3ADFB6F1C9B37EB008E5A91 /* NumEtNom.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3ADFB6E1C9B37EB008E5A91 /* NumEtNom.swift */; };
 		F21B673C1CAD891300B76333 /* GestionInscription.swift in Sources */ = {isa = PBXBuildFile; fileRef = F21B673B1CAD891300B76333 /* GestionInscription.swift */; };
+		F23AE2B41CAD9B26007B529A /* NoterPersonController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23AE2B31CAD9B26007B529A /* NoterPersonController.swift */; };
 		F266E90A1C89DCD600F7AC83 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F266E9091C89DCD600F7AC83 /* AppDelegate.swift */; };
 		F266E90F1C89DCD600F7AC83 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F266E90D1C89DCD600F7AC83 /* Main.storyboard */; };
 		F266E9121C89DCD600F7AC83 /* HelpProject.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F266E9101C89DCD600F7AC83 /* HelpProject.xcdatamodeld */; };
@@ -63,6 +64,7 @@
 		B3ADFB6C1C9B1EF2008E5A91 /* Identification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Identification.swift; sourceTree = "<group>"; };
 		B3ADFB6E1C9B37EB008E5A91 /* NumEtNom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumEtNom.swift; sourceTree = "<group>"; };
 		F21B673B1CAD891300B76333 /* GestionInscription.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GestionInscription.swift; sourceTree = "<group>"; };
+		F23AE2B31CAD9B26007B529A /* NoterPersonController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoterPersonController.swift; sourceTree = "<group>"; };
 		F266E9061C89DCD600F7AC83 /* HelpProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HelpProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F266E9091C89DCD600F7AC83 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F266E90E1C89DCD600F7AC83 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 			children = (
 				F266E9091C89DCD600F7AC83 /* AppDelegate.swift */,
 				F266E90D1C89DCD600F7AC83 /* Main.storyboard */,
+				F23AE2B31CAD9B26007B529A /* NoterPersonController.swift */,
 				F21B673B1CAD891300B76333 /* GestionInscription.swift */,
 				F28D80781C8F494A00DF0D4E /* ListeCategorieTableViewController.swift */,
 				F28D807A1C8F53CE00DF0D4E /* ListeParCategorieController.swift */,
@@ -312,6 +315,7 @@
 				F28D807B1C8F53CE00DF0D4E /* ListeParCategorieController.swift in Sources */,
 				B3ADFB6B1C9B196F008E5A91 /* ConnexionController.swift in Sources */,
 				B3ADFB6F1C9B37EB008E5A91 /* NumEtNom.swift in Sources */,
+				F23AE2B41CAD9B26007B529A /* NoterPersonController.swift in Sources */,
 				F266E9121C89DCD600F7AC83 /* HelpProject.xcdatamodeld in Sources */,
 				B38654E61CA5E0AA00AB410D /* RepondreController.swift in Sources */,
 				F21B673C1CAD891300B76333 /* GestionInscription.swift in Sources */,
