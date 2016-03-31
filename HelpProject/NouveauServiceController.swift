@@ -39,7 +39,8 @@ class NouveauServiceController: UIViewController{
         newService.setValue(dateDebutDispo.date, forKey: "dateDebutDispo")
         newService.setValue(dateFinDispo.date, forKey: "dateFinDispo")
         newService.setValue(Int(duree.text!), forKey: "duree")
-        newService.setValue(100, forKey: "idService")//TODO autogenere?
+        //print("NouveauServiceController "+(NSString(format:"%d",newService.objectID) as String))
+        newService.setValue(newService.objectID.hash, forKey: "idService")//TODO bon?
         newService.setValue(intitule.text, forKey: "intituleService")
         newService.setValue(offreOuDemande.selectedSegmentIndex==0, forKey: "offreOuDemande")//offre: offreDemande==true
         newService.setValue(categorie, forKey: "categorie")

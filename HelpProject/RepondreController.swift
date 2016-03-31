@@ -22,7 +22,7 @@ class RepondreController: UIViewController {
         let contexte:NSManagedObjectContext=appDel.managedObjectContext
         
         let newMessage=NSEntityDescription.insertNewObjectForEntityForName("Message", inManagedObjectContext: contexte)
-        newMessage.setValue(100, forKey: "idMsg")//TODO 100
+        newMessage.setValue(newMessage.objectID.hash, forKey: "idMsg")//TODO objectID
         newMessage.setValue(texteSujet.text, forKey: "sujet")
         newMessage.setValue(textReponseDetaille.text, forKey: "msgContent")
         newMessage.setValue(idService, forKey: "idService")
