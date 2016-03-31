@@ -131,6 +131,16 @@ class ListeCategorieTableViewController: BDDTableViewController {
                 dvc.identification=identification
             }
         }
+        if(segue.identifier=="afficherListePourNotation"){
+            
+                let dvc=segue.destinationViewController as! AttenteNotationController
+                
+                dvc.identification=identification
+            
+        }
+        
+        
+        //
     }
     
 
