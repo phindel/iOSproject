@@ -34,7 +34,7 @@ class ListeParCategorieController: BDDTableViewController {
         titreVue.title=categorie
         
         //TODO
-        boutonAjouter.enabled = true//(identification != nil)
+        boutonAjouter.enabled = (identification != nil)
         
         
         // Uncomment the following line to preserve selection between presentations
