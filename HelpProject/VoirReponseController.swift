@@ -48,6 +48,24 @@ class VoirReponseController: UIViewController {
             if res.count>0{
                 for r in res as! [NSManagedObject]{
                     r.setValue("accepte",forKey:"statutAttenteAccepteIgnore")
+                    
+                    
+                    
+                    
+                    
+                    let appDel:AppDelegate=UIApplication.sharedApplication().delegate as! AppDelegate
+                    let contexte:NSManagedObjectContext=appDel.managedObjectContext
+                    let req=NSFetchRequest(entityName: "Service")
+                    
+                    
+                    req.predicate=NSPredicate(format: "idService = %@", NSString(format:"%d",idService))
+                    let res=try contexte.executeFetchRequest(req)
+                    if res.count>0{
+                        for r1 in res as! [NSManagedObject]{
+                            r1.setValue(((r.valueForKey("from")!) as? Int)!,forKey:"partenaire")
+                            
+                        }
+                    }
                 }
             }
             navigationController?.popViewControllerAnimated(false)
@@ -64,6 +82,8 @@ class VoirReponseController: UIViewController {
     @IBOutlet weak var grandTextarea: UITextView!
     
     var idMsg:Int!
+    var idService:Int!
+    var identification: Identification!
     override func viewDidLoad() {
         super.viewDidLoad()
         
