@@ -62,7 +62,7 @@ class OffreDemandeController: UIViewController, MKMapViewDelegate{
                     descriptionA_O.text = ((r.valueForKey("descriptionService") as? String)!)
                     var dateFormatter = NSDateFormatter()
                     dateFormatter.dateFormat = "hh:mm"
-                   datePubA_O.text = dateFormatter.stringFromDate(((r.valueForKey("datePubDispo") as? NSDate)!))
+                   datePubA_O.text = dateFormatter.stringFromDate(((r.valueForKey("dateDebutDispo") as? NSDate)!))
                    
                     /*
                     
