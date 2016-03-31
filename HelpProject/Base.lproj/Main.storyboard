@@ -74,7 +74,7 @@
                         <leftBarButtonItems>
                             <barButtonItem title="Noter" id="HP9-a0-gSH">
                                 <connections>
-                                    <segue destination="Tyv-ca-kAI" kind="show" id="bQe-BC-3HS"/>
+                                    <segue destination="Tyv-ca-kAI" kind="show" identifier="afficherListePourNotation" id="bQe-BC-3HS"/>
                                 </connections>
                             </barButtonItem>
                             <barButtonItem style="plain" id="XRT-hT-Cyn">
@@ -113,7 +113,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t8l-Uj-tYu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="561" y="298"/>
+            <point key="canvasLocation" x="886.5" y="17"/>
         </scene>
         <!--Liste par categorie-->
         <scene sceneID="vVt-wd-MHd">
@@ -267,6 +267,11 @@
                                     <segue destination="AE2-BX-IZU" kind="show" id="5bp-ga-shN"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="login" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fkf-oF-z3w">
+                                <rect key="frame" x="-25" y="-30" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="N° Rue" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="om6-xq-KQN">
                                 <rect key="frame" x="-25" y="-30" width="97" height="30"/>
                                 <constraints>
@@ -284,11 +289,6 @@
                                         <include reference="O35-8F-SXz"/>
                                     </mask>
                                 </variation>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="login" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fkf-oF-z3w">
-                                <rect key="frame" x="-25" y="-30" width="97" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <textInputTraits key="textInputTraits"/>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -358,8 +358,8 @@
                                 <exclude reference="lUu-lh-BbV"/>
                                 <exclude reference="Bpm-If-yND"/>
                                 <exclude reference="5HQ-Io-zh0"/>
-                                <exclude reference="om6-xq-KQN"/>
                                 <exclude reference="fkf-oF-z3w"/>
+                                <exclude reference="om6-xq-KQN"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="nuC-rl-iKx"/>
@@ -428,8 +428,8 @@
                                 <include reference="lUu-lh-BbV"/>
                                 <include reference="Bpm-If-yND"/>
                                 <include reference="5HQ-Io-zh0"/>
-                                <include reference="om6-xq-KQN"/>
                                 <include reference="fkf-oF-z3w"/>
+                                <include reference="om6-xq-KQN"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="nuC-rl-iKx"/>
@@ -492,13 +492,14 @@
                     </view>
                     <connections>
                         <outlet property="login" destination="fkf-oF-z3w" id="4jh-tH-zTI"/>
+                        <outlet property="numRue" destination="om6-xq-KQN" id="hrl-LZ-ha5"/>
                         <outlet property="passOne" destination="B1q-g8-xDi" id="wQ7-2J-nny"/>
                         <outlet property="passTwo" destination="TVR-Gp-hZO" id="DFU-Qh-0is"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uLo-QM-uXf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="760.5" y="903"/>
+            <point key="canvasLocation" x="1612.5" y="781"/>
         </scene>
         <!--Connexion-->
         <scene sceneID="m37-9C-8KA">
@@ -711,15 +712,6 @@
                                     <rect key="frame" x="20" y="402" width="354" height="178"/>
                                 </variation>
                             </mapView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="budget " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7i3-Ez-4W5">
-                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
-                                    <rect key="frame" x="20" y="305" width="354" height="51"/>
-                                </variation>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date pub" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="11E-GF-NkY">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -779,6 +771,15 @@
                                     <rect key="frame" x="20" y="357" width="354" height="178"/>
                                 </variation>
                             </mapView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="budget " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7i3-Ez-4W5">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="20" y="305" width="354" height="51"/>
+                                </variation>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -794,7 +795,6 @@
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="pfl-Yd-jFM"/>
-                                <exclude reference="7i3-Ez-4W5"/>
                                 <exclude reference="11E-GF-NkY"/>
                                 <exclude reference="VdV-CL-10a"/>
                                 <exclude reference="k00-Se-QaA"/>
@@ -802,6 +802,7 @@
                                 <exclude reference="gmc-Yo-gqy"/>
                                 <exclude reference="5d3-YY-sDH"/>
                                 <exclude reference="d9Z-lh-wHc"/>
+                                <exclude reference="7i3-Ez-4W5"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="1bF-g9-06C"/>
@@ -817,7 +818,6 @@
                         <variation key="widthClass=compact">
                             <mask key="subviews">
                                 <include reference="pfl-Yd-jFM"/>
-                                <include reference="7i3-Ez-4W5"/>
                                 <include reference="11E-GF-NkY"/>
                                 <include reference="VdV-CL-10a"/>
                                 <include reference="k00-Se-QaA"/>
@@ -825,6 +825,7 @@
                                 <include reference="gmc-Yo-gqy"/>
                                 <include reference="5d3-YY-sDH"/>
                                 <include reference="d9Z-lh-wHc"/>
+                                <include reference="7i3-Ez-4W5"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="1bF-g9-06C"/>

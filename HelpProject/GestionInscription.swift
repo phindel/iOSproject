@@ -8,14 +8,16 @@
 
 import UIKit
 
-
-/*@IBOutlet var personName: UITextField!
-@IBOutlet var passTwo: UITextField!
-@IBOutlet var passOne: UITextField!
-@IBOutlet var login: UITextField!
-*/class GestionInscription: UIViewController {
+class GestionInscription: UIViewController {
     
     
+    @IBOutlet var personLogin: UITextField!
+    @IBOutlet var passTwo: UITextField!
+    @IBOutlet var passOne: UITextField!
+    @IBOutlet var login: UITextField!
+    
+    
+    @IBOutlet var numRue: UITextField!
     
     
     
