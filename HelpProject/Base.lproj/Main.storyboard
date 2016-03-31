@@ -8,6 +8,23 @@
         <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
     </dependencies>
     <scenes>
+        <!--Noter Person Controleur-->
+        <scene sceneID="Ge1-jZ-LPy">
+            <objects>
+                <viewController title="Noter Person Controleur" id="6An-2z-Pwo" customClass="NoterPersonController" customModule="HelpProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="A1J-6S-pSa"/>
+                        <viewControllerLayoutGuide type="bottom" id="rOO-BX-0SS"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="XMP-By-Hen">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ifz-Db-lql" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="64.5" y="-293"/>
+        </scene>
         <!--Attente Notation Controller-->
         <scene sceneID="yKY-Vv-aXt">
             <objects>
@@ -28,10 +45,13 @@
                             <outlet property="delegate" destination="Tyv-ca-kAI" id="ySD-f9-rsq"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <segue destination="6An-2z-Pwo" kind="show" identifier="segueNoter" id="lDE-vm-OWg"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GlQ-zX-YOA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="529.5" y="-158"/>
+            <point key="canvasLocation" x="789" y="-230"/>
         </scene>
         <!--Liste des categories-->
         <scene sceneID="Zzm-Vm-yhe">
@@ -113,7 +133,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t8l-Uj-tYu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="886.5" y="17"/>
+            <point key="canvasLocation" x="796.5" y="62"/>
         </scene>
         <!--Liste par categorie-->
         <scene sceneID="vVt-wd-MHd">
@@ -243,6 +263,29 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="N° Rue" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="om6-xq-KQN">
+                                <rect key="frame" x="-25" y="-30" width="97" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="130" id="O35-8F-SXz"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="O35-8F-SXz"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="O35-8F-SXz"/>
+                                    </mask>
+                                </variation>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="login" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fkf-oF-z3w">
+                                <rect key="frame" x="-25" y="-30" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5HQ-Io-zh0">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <constraints>
@@ -264,32 +307,10 @@
                                     </mask>
                                 </variation>
                                 <connections>
+                                    <action selector="addNewPerson:" destination="T2h-fR-cNp" eventType="touchUpInside" id="ZbJ-sv-mCp"/>
                                     <segue destination="AE2-BX-IZU" kind="show" id="5bp-ga-shN"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="login" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fkf-oF-z3w">
-                                <rect key="frame" x="-25" y="-30" width="97" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="N° Rue" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="om6-xq-KQN">
-                                <rect key="frame" x="-25" y="-30" width="97" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="130" id="O35-8F-SXz"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="O35-8F-SXz"/>
-                                    </mask>
-                                </variation>
-                                <variation key="widthClass=compact">
-                                    <mask key="constraints">
-                                        <include reference="O35-8F-SXz"/>
-                                    </mask>
-                                </variation>
-                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -357,9 +378,9 @@
                                 <exclude reference="3j9-0I-gze"/>
                                 <exclude reference="lUu-lh-BbV"/>
                                 <exclude reference="Bpm-If-yND"/>
-                                <exclude reference="5HQ-Io-zh0"/>
-                                <exclude reference="fkf-oF-z3w"/>
                                 <exclude reference="om6-xq-KQN"/>
+                                <exclude reference="fkf-oF-z3w"/>
+                                <exclude reference="5HQ-Io-zh0"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="nuC-rl-iKx"/>
@@ -427,9 +448,9 @@
                                 <include reference="3j9-0I-gze"/>
                                 <include reference="lUu-lh-BbV"/>
                                 <include reference="Bpm-If-yND"/>
-                                <include reference="5HQ-Io-zh0"/>
-                                <include reference="fkf-oF-z3w"/>
                                 <include reference="om6-xq-KQN"/>
+                                <include reference="fkf-oF-z3w"/>
+                                <include reference="5HQ-Io-zh0"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="nuC-rl-iKx"/>
@@ -491,10 +512,13 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="codePostal" destination="lUu-lh-BbV" id="wiK-bu-wyi"/>
                         <outlet property="login" destination="fkf-oF-z3w" id="4jh-tH-zTI"/>
+                        <outlet property="nomRue" destination="3j9-0I-gze" id="O1S-V6-HTi"/>
                         <outlet property="numRue" destination="om6-xq-KQN" id="hrl-LZ-ha5"/>
                         <outlet property="passOne" destination="B1q-g8-xDi" id="wQ7-2J-nny"/>
                         <outlet property="passTwo" destination="TVR-Gp-hZO" id="DFU-Qh-0is"/>
+                        <outlet property="ville" destination="Bpm-If-yND" id="DL9-9w-gsh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uLo-QM-uXf" userLabel="First Responder" sceneMemberID="firstResponder"/>
