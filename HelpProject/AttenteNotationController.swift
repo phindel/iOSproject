@@ -12,7 +12,6 @@ import CoreData
 
 class AttenteNotationController: BDDTableViewController {
     
-    var idService:Int!
     
     /*override func viewDidAppear(animated: Bool) {
     super.viewDidAppear(animated)*/
@@ -35,29 +34,38 @@ class AttenteNotationController: BDDTableViewController {
     // MARK: - Table view data source
     
     override func ajouterDansTable(c:Int,r:NSManagedObject ){
-        tableCacheBDD[c]=NumEtNom(num: ((r.valueForKey("idMsg")!) as? Int)!,nom: ((r.valueForKey("sujet")!) as? String)!)//((r.valueForKey("b")!) as? String)!
+        var personneANoter=""
+        if(((r.valueForKey("offreOuDemande")!) as? Bool)!){
+            personneANoter="partenaire"
+        }
+        else{
+            personneANoter="initiateur"
+        }
+        
+        tableCacheBDD[c]=NumEtNom(num: ((r.valueForKey(personneANoter)!) as? Int)!,nom: ((r.valueForKey("intituleService")!) as? String)!)//((r.valueForKey("b")!) as? String)!
         //msgContent
     }
     override func ajouterCritere(req:NSFetchRequest){
         
         //cas offre: si on a accepte l'offre
         //cas demande: si on est le demandeur et qu'il y a un accepteur
-        let ser=NSString(format:"%d",idService)
-        req.predicate=NSPredicate(format: " (idService=%@ ) and (statutAttenteAccepteIgnore='attente')",ser)//offreOuDemande partenaire
+        //let ser=NSString(format:"%d",idService)
+        //req.predicate=NSPredicate(format: " (idService=%@ ) and (statutAttenteAccepteIgnore='attente')",ser)//offreOuDemande partenaire
+        req.predicate=NSPredicate(format: " ((offreOuDemande) and (partenaire=%@)) or ((not offreOuDemande) and (initiateur=%@))",identification.id,identification.id)
         //
     }//attente", forKey: "statutAttenteAccepteIgnore
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         print("tableView cellForRowAtIndexPath")
-        let cell = tableView.dequeueReusableCellWithIdentifier("typeReponse", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier("typeNotation", forIndexPath: indexPath)
         let nen=tableCacheBDD[indexPath.item] as! NumEtNom as NumEtNom!
         cell.textLabel!.text=nen.nom//categorie
         return cell
     }
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        performSegueWithIdentifier("voirReponse", sender: indexPath.row)
+        performSegueWithIdentifier("noter", sender: indexPath.row)
     }
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if(segue.identifier=="voirReponse"){
+        if(segue.identifier=="noter"){
             if let indice = tableView.indexPathsForSelectedRows{
                 let dvc=segue.destinationViewController as! VoirReponseController
                 //print((indice.first?.item)!)
