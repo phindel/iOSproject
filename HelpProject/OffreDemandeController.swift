@@ -18,6 +18,10 @@ class OffreDemandeController: UIViewController, MKMapViewDelegate{
     var identification: Identification!
     var idService:Int!
     
+    @IBOutlet weak var initiateur: UILabel!
+    
+    
+    
     @IBOutlet weak var boutonVoirReponses: UIButton!
     @IBOutlet weak var boutonRepondre: UIButton!
     @IBOutlet weak var localisationOnMap: MKMapView!
@@ -54,7 +58,7 @@ class OffreDemandeController: UIViewController, MKMapViewDelegate{
         boutonRepondre.enabled=identification != nil
         
         req.predicate=NSPredicate(format: "idService = %@", NSString(format:"%d",idService))
-        
+        var initiateurNum=0
         do{
             let res=try contexte.executeFetchRequest(req)
             if res.count>0{
@@ -71,7 +75,7 @@ class OffreDemandeController: UIViewController, MKMapViewDelegate{
                     }else{
                         type="Demande"
                     }
-                    
+                    initiateurNum = ((r.valueForKey("initiateur")!) as? Int)!
                     title = type + " " + ((r.valueForKey("intituleService")!) as? String)!
                     
                     libelleA_O.text = "Nom:" + ((r.valueForKey("intituleService")!) as? String)!
@@ -79,7 +83,7 @@ class OffreDemandeController: UIViewController, MKMapViewDelegate{
                     budgetA_O.text = "Budget: " +  String(((r.valueForKey("coutService") as? Double!))!) + " euros"
                     
                     descriptionA_O.text = "Description: " +  ((r.valueForKey("descriptionService") as? String)!)
-                    var dateFormatter = NSDateFormatter()
+                    let dateFormatter = NSDateFormatter()
                     dateFormatter.dateFormat = "hh:mm"
                    datePubA_O.text = "Début: " +  dateFormatter.stringFromDate(((r.valueForKey("dateDebutDispo") as? NSDate)!))
                     dateFin.text = "Fin: " +  dateFormatter.stringFromDate(((r.valueForKey("dateFinDispo") as? NSDate)!))
@@ -94,8 +98,46 @@ class OffreDemandeController: UIViewController, MKMapViewDelegate{
         }catch{
             print("Echec du fetch!")
         }
+        let req2=NSFetchRequest(entityName: "Person")
+        req2.returnsObjectsAsFaults=false
+        req2.predicate=NSPredicate(format: "idPerson = %@", NSString(format:"%d",initiateurNum))
+        var initiateurText=""
+        var initiateurNote:Double=0
+        do{
+            let res=try contexte.executeFetchRequest(req2)
+            if res.count>0{
+                for r in res as! [NSManagedObject]{
+                    initiateurText = "Initiateur: " + ((r.valueForKey("login")!) as? String)!
+                }
+            }
+        }catch{
+            print("Echec du fetch!")
+        }
         
+        let req3=NSFetchRequest(entityName: "NotePerson")
+        req3.returnsObjectsAsFaults=false
+        req3.predicate=NSPredicate(format: "idPerson = %@", NSString(format:"%d",initiateurNum))
         
+        do{
+            let res=try contexte.executeFetchRequest(req3)
+            
+            if res.count>0{
+                let iCount:Double=1/(Double(res.count))
+                for r in res as! [NSManagedObject]{
+                    let mul=Double(((r.valueForKey("note")!) as? Int)!) * iCount
+                    initiateurNote+=mul
+                }
+            }
+        }catch{
+            print("Echec du fetch!")
+        }
+        
+        if(initiateurNote>0){
+            initiateurText = initiateurText + " (noté " + (NSString(format:"%.1f",initiateurNote) as String) + " )"
+        }else{
+            initiateurText = initiateurText + " (non noté)"
+        }
+        initiateur.text=initiateurText
         /*
             Chargement des coordonnées sur la map!
         */

@@ -816,7 +816,7 @@
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <state key="normal" title="Répondre"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="33" y="80" width="102" height="30"/>
+                                    <rect key="frame" x="24" y="91" width="102" height="30"/>
                                 </variation>
                                 <connections>
                                     <segue destination="bpm-s7-MVy" kind="show" identifier="repondre" id="G6X-he-DWY"/>
@@ -826,7 +826,7 @@
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <state key="normal" title="Voir les reponses"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="257" y="80" width="123" height="30"/>
+                                    <rect key="frame" x="248" y="91" width="123" height="30"/>
                                 </variation>
                                 <connections>
                                     <segue destination="MD0-Ev-4Le" kind="show" identifier="voirReponse" id="8s6-VY-SaI"/>
@@ -856,6 +856,15 @@
                                     <rect key="frame" x="210" y="276" width="170" height="21"/>
                                 </variation>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="initiateur" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cdh-b2-c1v">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="63" y="67" width="308" height="21"/>
+                                </variation>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <variation key="default">
@@ -869,6 +878,7 @@
                                 <exclude reference="d9Z-lh-wHc"/>
                                 <exclude reference="7i3-Ez-4W5"/>
                                 <exclude reference="pfl-Yd-jFM"/>
+                                <exclude reference="cdh-b2-c1v"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -882,6 +892,7 @@
                                 <include reference="d9Z-lh-wHc"/>
                                 <include reference="7i3-Ez-4W5"/>
                                 <include reference="pfl-Yd-jFM"/>
+                                <include reference="cdh-b2-c1v"/>
                             </mask>
                         </variation>
                     </view>
@@ -892,6 +903,7 @@
                         <outlet property="dateFin" destination="pfl-Yd-jFM" id="U62-hI-0in"/>
                         <outlet property="datePubA_O" destination="11E-GF-NkY" id="WKc-9O-KFk"/>
                         <outlet property="descriptionA_O" destination="VdV-CL-10a" id="lfT-9v-Nv4"/>
+                        <outlet property="initiateur" destination="cdh-b2-c1v" id="j3z-Ir-DcI"/>
                         <outlet property="libelleA_O" destination="maz-mr-JMS" id="kd7-ce-OJL"/>
                         <outlet property="localisationOnMap" destination="d9Z-lh-wHc" id="IaO-hc-GiB"/>
                     </connections>
