@@ -20,6 +20,7 @@ class AttenteNotationController: BDDTableViewController {
     super.viewDidAppear(animated)*/
     override func viewDidLoad() {
         super.viewDidLoad()
+        title="Service(s) à noter"
         initialiser("Service", champAAfficherBDD: "__inutile__")
     }
     
@@ -79,7 +80,9 @@ class AttenteNotationController: BDDTableViewController {
                 //dvc.identification=identification
                 dvc.identification=identification
                 dvc.personneANoter=nen.num
+                
                 dvc.idService=nen.num2
+                
                 
             }
         }
