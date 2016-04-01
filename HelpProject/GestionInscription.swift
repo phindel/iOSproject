@@ -27,48 +27,37 @@ class GestionInscription: UIViewController {
     
     @IBOutlet var ville: UITextField!
     
-    
-    
-    @IBAction func addNewPerson(sender: AnyObject) {
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
-        let appDel:AppDelegate=UIApplication.sharedApplication().delegate as! AppDelegate
-        let contexte:NSManagedObjectContext=appDel.managedObjectContext
-        let req=NSFetchRequest(entityName: "Person")
-        req.returnsObjectsAsFaults=false
-        req.predicate=NSPredicate(format: "login = %@",login!.text!)
-        var c=0
-        do{
-            let res=try contexte.executeFetchRequest(req)
-            if res.count>0{
-                let r=res.first as! NSManagedObject
-               let passwd = ((r.valueForKey("password")!) as? String)!
-             var idPerson = ((r.valueForKey("idPerson")!) as? Int)!
-                if passwd == passOne!.text! {
-                    // Message user existe
-                    
-                    performSegueWithIdentifier("afficherListeCategorie",sender: "")
-                }/*
-                else {
-                    // add user in the table!
-                    let entityDescription = NSEntityDescription.entityForName("Person", inManagedObjectContext: managedObjectContext)
-                    let newPerson = NSManagedObject(entity: entityDescription!, insertIntoManagedObjectContext: self.managedObjectContext)
-                    newPerson.setValue(" ", forkey: )
-                    newPerson.setValue(" ", forkey: )
-                }
-                */
-                
-                c+=1 //swift ne supporte pas c++
-                
-                //}
-            }
-        }catch{
-            print("Echec du fetch!")
+        
+        if(segue.identifier=="afficherListeCategorie"){
+            
+            
+            let dvc=segue.destinationViewController as! ListeCategorieTableViewController
+            dvc.identification=Identification(login:login!.text!,password:passOne!.text!,id:idPerson)
+            
+            //dvc.boutonConnection.setTitle("Se déconnecter",forState: UIControlState.Normal)
         }
+    }
+    var idPerson=0
+    @IBAction func addNewPerson(sender: AnyObject) {
+        if(passOne!.text!==passTwo!.text!){
+            let appDel:AppDelegate=UIApplication.sharedApplication().delegate as! AppDelegate
+            let contexte:NSManagedObjectContext=appDel.managedObjectContext
+            let newPerson=NSEntityDescription.insertNewObjectForEntityForName("Person", inManagedObjectContext: contexte)
+            idPerson=newPerson.objectID.hash
+            newPerson.setValue(idPerson, forKey: "idPerson")
+            newPerson.setValue("TODO", forKey: "address")
+            newPerson.setValue(login!.text!, forKey: "login")
+            newPerson.setValue(passOne!.text!, forKey: "password")
+            performSegueWithIdentifier("afficherListeCategorie",sender: "")
+        }
+        
 
         
         
         
-        var addressPerson = ""
+        //var addressPerson = ""
         
         /*addressPerson += numRue.text!
         addressPerson += " "

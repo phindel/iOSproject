@@ -67,7 +67,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="typeNotation" id="49E-oM-IDE">
-                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="49E-oM-IDE" id="LSp-Tm-vBL">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
@@ -98,7 +98,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="typeGen" id="hKs-QJ-K1L">
-                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hKs-QJ-K1L" id="lXg-gG-VXU">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
@@ -179,7 +179,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <segmentedControl key="tableHeaderView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="CLP-5b-T8J">
-                            <rect key="frame" x="0.0" y="64" width="600" height="29"/>
+                            <rect key="frame" x="0.0" y="0.0" width="600" height="29"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <segments>
                                 <segment title="Offres"/>
@@ -191,7 +191,7 @@
                         </segmentedControl>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="typeDemande" id="nWY-ac-GHP">
-                                <rect key="frame" x="0.0" y="121" width="600" height="44"/>
+                                <rect key="frame" x="0.0" y="57" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nWY-ac-GHP" id="a79-cA-BpT">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
@@ -343,7 +343,6 @@
                                 </variation>
                                 <connections>
                                     <action selector="addNewPerson:" destination="T2h-fR-cNp" eventType="touchUpInside" id="ZbJ-sv-mCp"/>
-                                    <segue destination="AE2-BX-IZU" kind="show" id="5bp-ga-shN"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -554,6 +553,7 @@
                         <outlet property="passOne" destination="B1q-g8-xDi" id="wQ7-2J-nny"/>
                         <outlet property="passTwo" destination="TVR-Gp-hZO" id="DFU-Qh-0is"/>
                         <outlet property="ville" destination="Bpm-If-yND" id="DL9-9w-gsh"/>
+                        <segue destination="3lz-OC-cgZ" kind="show" identifier="afficherListeCategorie" id="I62-tr-RWa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uLo-QM-uXf" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -996,7 +996,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="typeReponse" id="Xtu-wx-5Ac">
-                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Xtu-wx-5Ac" id="mNo-z5-rlr">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
@@ -1263,8 +1263,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="PDb-ST-ITT"/>
+        <segue reference="I62-tr-RWa"/>
         <segue reference="Oih-zT-aDb"/>
-        <segue reference="5bp-ga-shN"/>
     </inferredMetricsTieBreakers>
 </document>
