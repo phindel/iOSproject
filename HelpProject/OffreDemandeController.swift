@@ -45,6 +45,7 @@ class OffreDemandeController: UIViewController, MKMapViewDelegate{
     }
     override func viewDidLoad() {
             super.viewDidLoad()
+        
         let appDel:AppDelegate=UIApplication.sharedApplication().delegate as! AppDelegate
         let contexte:NSManagedObjectContext=appDel.managedObjectContext
         let req=NSFetchRequest(entityName: "Service")
@@ -64,7 +65,14 @@ class OffreDemandeController: UIViewController, MKMapViewDelegate{
                     
                     //print(r.valueForKey("nomCategorie")!)
                     //(num: ((r.valueForKey("idService")!) as? Int)!,nom: ((r.valueForKey("intituleService")!) as? String)!)
+                    var type=""
+                    if(((r.valueForKey("offreOuDemande")!) as? Bool)! ){
+                        type="Offre"
+                    }else{
+                        type="Demande"
+                    }
                     
+                    title = type + " " + ((r.valueForKey("intituleService")!) as? String)!
                     
                     libelleA_O.text = "Nom:" + ((r.valueForKey("intituleService")!) as? String)!
                     
