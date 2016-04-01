@@ -100,7 +100,13 @@ class VoirReponseController: UIViewController {
                     
                     grandTextarea.text = ((r.valueForKey("msgContent")!) as? String)!
                     sujetText.text = ((r.valueForKey("sujet")!) as? String)!
-                    offreText.text = NSString(format:"%d",((r.valueForKey("sommePropose") as? Int)!)) as String
+                    //((r.valueForKey("idMsg")!) as? Int)!
+                    let s=r.valueForKey("sommePropose")
+                    
+                    if(s != nil){
+                        offreText.text = NSString(format:"%d",(((r.valueForKey("sommePropose")!) as? Int)!)) as String
+                    }
+                    
                     idPerson=((r.valueForKey("from") as? Int)!)
                 }
             }

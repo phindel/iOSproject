@@ -1,6 +1,6 @@
 
 Pour peupler la base de donnée, cliquer sur "Remplir BDD"
-Ceci crée, entre autres, un utilisateur a (mot de passe "a") en lui donnant une note et des catégories.
+Ceci crée, entre autres, un utilisateur "a" (mot de passe "a") en lui donnant une note et des catégories.
 Il faut rafraichir la liste ensuite
 
 Vue initiale: ListeCategorieTableViewController
