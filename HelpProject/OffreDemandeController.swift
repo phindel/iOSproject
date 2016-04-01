@@ -4,6 +4,10 @@
 //
 //  Created by leo on 16/03/2016.
 //  Copyright © 2016 del_leo. All rights reserved.
+/*
+Permet de visualiser un Service
+
+*/
 //
 
 import UIKit
@@ -21,7 +25,11 @@ class OffreDemandeController: UIViewController, MKMapViewDelegate{
     @IBOutlet weak var libelleA_O: UILabel!
     
     
-    @IBOutlet weak var datePubA_O: UILabel!
+    @IBOutlet weak var datePubA_O: UILabel! //date de début
+    
+    
+    @IBOutlet weak var dateFin: UILabel!
+    
     
     
     @IBOutlet weak var descriptionA_O: UILabel!
@@ -49,29 +57,30 @@ class OffreDemandeController: UIViewController, MKMapViewDelegate{
         do{
             let res=try contexte.executeFetchRequest(req)
             if res.count>0{
-                print("10")
+                
                 for r in res as! [NSManagedObject]{
                     
-                    print("111")
+                    
                     
                     //print(r.valueForKey("nomCategorie")!)
                     //(num: ((r.valueForKey("idService")!) as? Int)!,nom: ((r.valueForKey("intituleService")!) as? String)!)
                     
                     
-                    libelleA_O.text = ((r.valueForKey("intituleService")!) as? String)!
+                    libelleA_O.text = "Nom:" + ((r.valueForKey("intituleService")!) as? String)!
                     
-                    budgetA_O.text = String(((r.valueForKey("coutService") as? Double)))
+                    budgetA_O.text = "Budget: " +  String(((r.valueForKey("coutService") as? Double!))!) + " euros"
                     
-                    descriptionA_O.text = ((r.valueForKey("descriptionService") as? String)!)
+                    descriptionA_O.text = "Description: " +  ((r.valueForKey("descriptionService") as? String)!)
                     var dateFormatter = NSDateFormatter()
                     dateFormatter.dateFormat = "hh:mm"
-                   datePubA_O.text = dateFormatter.stringFromDate(((r.valueForKey("dateDebutDispo") as? NSDate)!))
+                   datePubA_O.text = "Début: " +  dateFormatter.stringFromDate(((r.valueForKey("dateDebutDispo") as? NSDate)!))
+                    dateFin.text = "Fin: " +  dateFormatter.stringFromDate(((r.valueForKey("dateFinDispo") as? NSDate)!))
                    
                     /*
                     
                     */
                     
-                    print("101")
+                    
                 }
             }
         }catch{

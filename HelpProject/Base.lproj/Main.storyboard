@@ -757,37 +757,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="compteur" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pfl-Yd-jFM">
-                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
-                                    <rect key="frame" x="20" y="276" width="74" height="21"/>
-                                </variation>
-                            </label>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="d9Z-lh-wHf">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="20" y="402" width="354" height="178"/>
                                 </variation>
                             </mapView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date pub" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="11E-GF-NkY">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date debut" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="11E-GF-NkY">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
-                                    <rect key="frame" x="304" y="276" width="70" height="21"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="8" y="276" width="154" height="21"/>
                                 </variation>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VdV-CL-10a">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description " lineBreakMode="wordWrap" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VdV-CL-10a">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
-                                    <rect key="frame" x="114" y="185" width="260" height="51"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="114" y="185" width="260" height="92"/>
                                 </variation>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="k00-Se-QaA">
@@ -796,38 +787,13 @@
                                     <rect key="frame" x="8" y="129" width="98" height="80"/>
                                 </variation>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Annonce libelle" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="maz-mr-JMS">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Annonce libelle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="maz-mr-JMS">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
-                                    <rect key="frame" x="114" y="126" width="266" height="51"/>
-                                </variation>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5d3-YY-sDH">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <state key="normal" title="Voir les reponses"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="242" y="80" width="123" height="30"/>
-                                </variation>
-                                <connections>
-                                    <segue destination="MD0-Ev-4Le" kind="show" identifier="voirReponse" id="8s6-VY-SaI"/>
-                                </connections>
-                            </button>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="d9Z-lh-wHc">
-                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
-                                    <rect key="frame" x="20" y="357" width="354" height="178"/>
-                                </variation>
-                            </mapView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="budget " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7i3-Ez-4W5">
-                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
-                                    <rect key="frame" x="20" y="305" width="354" height="51"/>
+                                    <rect key="frame" x="114" y="126" width="266" height="51"/>
                                 </variation>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gmc-Yo-gqy">
@@ -840,62 +806,66 @@
                                     <segue destination="bpm-s7-MVy" kind="show" identifier="repondre" id="G6X-he-DWY"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5d3-YY-sDH">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Voir les reponses"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="257" y="80" width="123" height="30"/>
+                                </variation>
+                                <connections>
+                                    <segue destination="MD0-Ev-4Le" kind="show" identifier="voirReponse" id="8s6-VY-SaI"/>
+                                </connections>
+                            </button>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="d9Z-lh-wHc">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="20" y="357" width="354" height="178"/>
+                                </variation>
+                            </mapView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="budget " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7i3-Ez-4W5">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="20" y="305" width="354" height="51"/>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date fin" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pfl-Yd-jFM">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="210" y="276" width="170" height="21"/>
+                                </variation>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="bottom" secondItem="7i3-Ez-4W5" secondAttribute="bottom" constant="244" id="1bF-g9-06C"/>
-                            <constraint firstItem="7i3-Ez-4W5" firstAttribute="trailing" secondItem="d9Z-lh-wHc" secondAttribute="trailing" id="40C-br-yPI"/>
-                            <constraint firstAttribute="bottom" secondItem="d9Z-lh-wHc" secondAttribute="bottom" constant="20" symbolic="YES" id="YxW-U6-jQY"/>
-                            <constraint firstItem="7i3-Ez-4W5" firstAttribute="trailing" secondItem="VdV-CL-10a" secondAttribute="trailing" id="cEA-eQ-d3A"/>
-                            <constraint firstItem="7i3-Ez-4W5" firstAttribute="trailing" secondItem="11E-GF-NkY" secondAttribute="trailing" id="m7F-Fh-alu"/>
-                            <constraint firstItem="7i3-Ez-4W5" firstAttribute="centerX" secondItem="maz-mr-JMS" secondAttribute="centerX" id="rbu-va-aDe"/>
-                            <constraint firstItem="7i3-Ez-4W5" firstAttribute="top" secondItem="pfl-Yd-jFM" secondAttribute="bottom" constant="8" symbolic="YES" id="uvj-ZW-4Kt"/>
-                            <constraint firstItem="7i3-Ez-4W5" firstAttribute="top" secondItem="11E-GF-NkY" secondAttribute="bottom" constant="8" symbolic="YES" id="yfG-eM-sEm"/>
-                        </constraints>
                         <variation key="default">
                             <mask key="subviews">
-                                <exclude reference="pfl-Yd-jFM"/>
                                 <exclude reference="11E-GF-NkY"/>
                                 <exclude reference="VdV-CL-10a"/>
                                 <exclude reference="k00-Se-QaA"/>
                                 <exclude reference="maz-mr-JMS"/>
+                                <exclude reference="gmc-Yo-gqy"/>
                                 <exclude reference="5d3-YY-sDH"/>
                                 <exclude reference="d9Z-lh-wHc"/>
                                 <exclude reference="7i3-Ez-4W5"/>
-                                <exclude reference="gmc-Yo-gqy"/>
-                            </mask>
-                            <mask key="constraints">
-                                <exclude reference="1bF-g9-06C"/>
-                                <exclude reference="40C-br-yPI"/>
-                                <exclude reference="cEA-eQ-d3A"/>
-                                <exclude reference="m7F-Fh-alu"/>
-                                <exclude reference="rbu-va-aDe"/>
-                                <exclude reference="uvj-ZW-4Kt"/>
-                                <exclude reference="yfG-eM-sEm"/>
-                                <exclude reference="YxW-U6-jQY"/>
+                                <exclude reference="pfl-Yd-jFM"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
-                                <include reference="pfl-Yd-jFM"/>
                                 <include reference="11E-GF-NkY"/>
                                 <include reference="VdV-CL-10a"/>
                                 <include reference="k00-Se-QaA"/>
                                 <include reference="maz-mr-JMS"/>
+                                <include reference="gmc-Yo-gqy"/>
                                 <include reference="5d3-YY-sDH"/>
                                 <include reference="d9Z-lh-wHc"/>
                                 <include reference="7i3-Ez-4W5"/>
-                                <include reference="gmc-Yo-gqy"/>
-                            </mask>
-                            <mask key="constraints">
-                                <include reference="1bF-g9-06C"/>
-                                <include reference="40C-br-yPI"/>
-                                <include reference="cEA-eQ-d3A"/>
-                                <include reference="m7F-Fh-alu"/>
-                                <include reference="rbu-va-aDe"/>
-                                <include reference="uvj-ZW-4Kt"/>
-                                <include reference="yfG-eM-sEm"/>
-                                <include reference="YxW-U6-jQY"/>
+                                <include reference="pfl-Yd-jFM"/>
                             </mask>
                         </variation>
                     </view>
@@ -903,6 +873,7 @@
                         <outlet property="boutonRepondre" destination="gmc-Yo-gqy" id="6sF-Op-qpl"/>
                         <outlet property="boutonVoirReponses" destination="5d3-YY-sDH" id="Ixn-7P-KsZ"/>
                         <outlet property="budgetA_O" destination="7i3-Ez-4W5" id="Jxb-xu-AWZ"/>
+                        <outlet property="dateFin" destination="pfl-Yd-jFM" id="U62-hI-0in"/>
                         <outlet property="datePubA_O" destination="11E-GF-NkY" id="WKc-9O-KFk"/>
                         <outlet property="descriptionA_O" destination="VdV-CL-10a" id="lfT-9v-Nv4"/>
                         <outlet property="libelleA_O" destination="maz-mr-JMS" id="kd7-ce-OJL"/>
