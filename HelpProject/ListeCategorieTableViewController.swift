@@ -14,6 +14,7 @@ class ListeCategorieTableViewController: BDDTableViewController {
 
     @IBOutlet weak var boutonConnection: UIButton!
     
+    @IBOutlet weak var boutonNoter: UIBarButtonItem!
     
     //var table1=["Ayy","fdg","V","","","8"]
     //var tableCategories=["","","","","","","","","","","","","","","","","",""]
@@ -90,7 +91,10 @@ class ListeCategorieTableViewController: BDDTableViewController {
     func rafraichir(){
         bdcache.rafraichir()
     }*/
-    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        boutonNoter.enabled=identification != nil
+    }
     
     
     @IBAction func refresh(sender: UIRefreshControl) {

@@ -4,6 +4,9 @@
 //
 //  Created by leo on 31/03/2016.
 //  Copyright © 2016 del_leo. All rights reserved.
+/*
+Liste des services à noter
+*/
 //
 
 
@@ -52,7 +55,7 @@ class AttenteNotationController: BDDTableViewController {
         //req.predicate=NSPredicate(format: " ((offreOuDemande=true) and (partenaire=%@)) or ((offreOuDemande=false) and (initiateur=%@))",identification.id,identification.id)
         let id=NSString(format:"%d",identification.id)
         //req.predicate=NSPredicate(format: " ( partenaire=%@ ) ",NSString(format:"%d",id))
-        req.predicate=NSPredicate(format: " ((offreOuDemande=true) and (partenaire=%@)) or ((offreOuDemande=false) and (initiateur=%@))",id,id)
+        req.predicate=NSPredicate(format: " ((offreOuDemande=true) and (partenaire=%@)) or ((offreOuDemande=false) and (initiateur=%@ and partenaire!=0))",id,id)
         
         //
     }//attente", forKey: "statutAttenteAccepteIgnore

@@ -163,6 +163,7 @@
                     </refreshControl>
                     <connections>
                         <outlet property="boutonConnection" destination="h17-e5-U8S" id="76D-yn-Scv"/>
+                        <outlet property="boutonNoter" destination="HP9-a0-gSH" id="LqG-b1-BMp"/>
                         <segue destination="MPl-dY-rD7" kind="show" identifier="segueListeParCat" id="Oih-zT-aDb"/>
                     </connections>
                 </tableViewController>
