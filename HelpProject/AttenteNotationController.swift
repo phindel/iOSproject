@@ -5,7 +5,7 @@
 //  Created by leo on 31/03/2016.
 //  Copyright © 2016 del_leo. All rights reserved.
 /*
-Liste des services à noter
+Liste des services à noter par l'utilisateur
 */
 //
 
@@ -53,13 +53,12 @@ class AttenteNotationController: BDDTableViewController {
         
         //cas offre: si on a accepte l'offre
         //cas demande: si on est le demandeur et qu'il y a un accepteur
-        //req.predicate=NSPredicate(format: " ((offreOuDemande=true) and (partenaire=%@)) or ((offreOuDemande=false) and (initiateur=%@))",identification.id,identification.id)
         let id=NSString(format:"%d",identification.id)
-        //req.predicate=NSPredicate(format: " ( partenaire=%@ ) ",NSString(format:"%d",id))
+        
         req.predicate=NSPredicate(format: " ((offreOuDemande=true) and (partenaire=%@)) or ((offreOuDemande=false) and (initiateur=%@ and partenaire!=0))",id,id)
         
         //
-    }//attente", forKey: "statutAttenteAccepteIgnore
+    }
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         print("tableView cellForRowAtIndexPath")
         let cell = tableView.dequeueReusableCellWithIdentifier("typeNotation", forIndexPath: indexPath)

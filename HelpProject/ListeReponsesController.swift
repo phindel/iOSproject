@@ -4,6 +4,8 @@
 //
 //  Created by leo on 25/03/2016.
 //  Copyright © 2016 del_leo. All rights reserved.
+/*Permet d'afficher les messages correspondant à une offre
+*/
 //
 
 import UIKit
@@ -13,8 +15,7 @@ class ListeReponsesController: BDDTableViewController {
     
     var idService:Int!
     
-    /*override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(animated)*/
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         initialiser("Message", champAAfficherBDD: "__inutile__")
@@ -34,19 +35,19 @@ class ListeReponsesController: BDDTableViewController {
     // MARK: - Table view data source
     
     override func ajouterDansTable(c:Int,r:NSManagedObject ){
-        tableCacheBDD[c]=NumEtNom(num: ((r.valueForKey("idMsg")!) as? Int)!,nom: ((r.valueForKey("sujet")!) as? String)!)//((r.valueForKey("b")!) as? String)!
-        //msgContent
+        tableCacheBDD[c]=NumEtNom(num: ((r.valueForKey("idMsg")!) as? Int)!,nom: ((r.valueForKey("sujet")!) as? String)!)
+        
     }
     override func ajouterCritere(req:NSFetchRequest){
         let ser=NSString(format:"%d",idService)
         req.predicate=NSPredicate(format: " (idService=%@ ) and (statutAttenteAccepteIgnore='attente')",ser)
-        //
-    }//attente", forKey: "statutAttenteAccepteIgnore
+        
+    }
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         print("tableView cellForRowAtIndexPath")
         let cell = tableView.dequeueReusableCellWithIdentifier("typeReponse", forIndexPath: indexPath)
         let nen=tableCacheBDD[indexPath.item] as! NumEtNom as NumEtNom!
-        cell.textLabel!.text=nen.nom//categorie
+        cell.textLabel!.text=nen.nom
         return cell
     }
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {

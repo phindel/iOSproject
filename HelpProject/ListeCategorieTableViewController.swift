@@ -4,6 +4,9 @@
 //
 //  Created by tp on 08/03/2016.
 //  Copyright © 2016 del_leo. All rights reserved.
+/*
+Vue d'introduction, affiche la liste des catégories
+*/
 //
 import UIKit
 import CoreData
@@ -16,12 +19,9 @@ class ListeCategorieTableViewController: BDDTableViewController {
     
     @IBOutlet weak var boutonNoter: UIBarButtonItem!
     
-    //var table1=["Ayy","fdg","V","","","8"]
-    //var tableCategories=["","","","","","","","","","","","","","","","","",""]
     var identification: Identification!
     
     @IBAction func remplirBDD(sender: AnyObject) {
-        //tableCategories[1]="rb"
         let appDel:AppDelegate=UIApplication.sharedApplication().delegate as! AppDelegate
         let contexte:NSManagedObjectContext=appDel.managedObjectContext
         let newCat=NSEntityDescription.insertNewObjectForEntityForName("Categorie", inManagedObjectContext: contexte)
@@ -78,7 +78,6 @@ class ListeCategorieTableViewController: BDDTableViewController {
             
         }catch{
             print("Probleme lors du peuplement de la BDD")
-            //tableCacheBDD[0]="BDD pas remplie"
         }
         
         self.tableView.reloadData()
@@ -87,17 +86,9 @@ class ListeCategorieTableViewController: BDDTableViewController {
         super.viewDidLoad()
         initialiser("Categorie", champAAfficherBDD: "nomCategorie")
         
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
         
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
     
-    /*let bdcache=BDDCache()
-    func rafraichir(){
-        bdcache.rafraichir()
-    }*/
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         boutonNoter.enabled=identification != nil
@@ -107,7 +98,6 @@ class ListeCategorieTableViewController: BDDTableViewController {
     @IBAction func refresh(sender: UIRefreshControl) {
         refreshControl?.attributedTitle=NSAttributedString(string:"Chargement...")
         rafraichir()
-        //tableCategories[1]+="j"
         self.tableView.reloadData()
         refreshControl?.endRefreshing()
     }

@@ -6,7 +6,7 @@
 //  Copyright © 2016 del_leo. All rights reserved.
 //
 
-import UIKit
+/*import UIKit
 import CoreData
 
 class ProfilControler: UITableViewController {
@@ -83,4 +83,4 @@ class ProfilControler: UITableViewController {
     
     
 
-}
+}*/

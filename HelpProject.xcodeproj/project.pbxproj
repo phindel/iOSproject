@@ -9,12 +9,12 @@
 /* Begin PBXBuildFile section */
 		B33310701C99D3D3009298E2 /* OffreDemandeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B333106F1C99D3D3009298E2 /* OffreDemandeController.swift */; };
 		B33310721C99DCBA009298E2 /* ProfilControler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33310711C99DCBA009298E2 /* ProfilControler.swift */; };
+		B35549851CAEF16D005B5936 /* readme in Resources */ = {isa = PBXBuildFile; fileRef = B35549841CAEF16D005B5936 /* readme */; };
 		B3779CF71CA1D69C0016B8C9 /* NouveauServiceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3779CF61CA1D69C0016B8C9 /* NouveauServiceController.swift */; };
 		B37D64971CAD828A00B54875 /* AttenteNotationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37D64961CAD828A00B54875 /* AttenteNotationController.swift */; };
 		B38654E21CA5D92A00AB410D /* ListeReponsesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38654E11CA5D92A00AB410D /* ListeReponsesController.swift */; };
 		B38654E41CA5DE2700AB410D /* VoirReponseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38654E31CA5DE2700AB410D /* VoirReponseController.swift */; };
 		B38654E61CA5E0AA00AB410D /* RepondreController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38654E51CA5E0AA00AB410D /* RepondreController.swift */; };
-		B3A66BBC1C91F80A003ED901 /* BDDCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A66BBB1C91F80A003ED901 /* BDDCache.swift */; };
 		B3A66BBE1C91FD85003ED901 /* BDDTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A66BBD1C91FD85003ED901 /* BDDTableViewController.swift */; };
 		B3ADFB6B1C9B196F008E5A91 /* ConnexionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3ADFB6A1C9B196F008E5A91 /* ConnexionController.swift */; };
 		B3ADFB6D1C9B1EF2008E5A91 /* Identification.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3ADFB6C1C9B1EF2008E5A91 /* Identification.swift */; };
@@ -53,12 +53,12 @@
 /* Begin PBXFileReference section */
 		B333106F1C99D3D3009298E2 /* OffreDemandeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OffreDemandeController.swift; sourceTree = "<group>"; };
 		B33310711C99DCBA009298E2 /* ProfilControler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfilControler.swift; sourceTree = "<group>"; };
+		B35549841CAEF16D005B5936 /* readme */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = readme; sourceTree = "<group>"; };
 		B3779CF61CA1D69C0016B8C9 /* NouveauServiceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NouveauServiceController.swift; sourceTree = "<group>"; };
 		B37D64961CAD828A00B54875 /* AttenteNotationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttenteNotationController.swift; sourceTree = "<group>"; };
 		B38654E11CA5D92A00AB410D /* ListeReponsesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListeReponsesController.swift; sourceTree = "<group>"; };
 		B38654E31CA5DE2700AB410D /* VoirReponseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VoirReponseController.swift; sourceTree = "<group>"; };
 		B38654E51CA5E0AA00AB410D /* RepondreController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepondreController.swift; sourceTree = "<group>"; };
-		B3A66BBB1C91F80A003ED901 /* BDDCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BDDCache.swift; sourceTree = "<group>"; };
 		B3A66BBD1C91FD85003ED901 /* BDDTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BDDTableViewController.swift; sourceTree = "<group>"; };
 		B3ADFB6A1C9B196F008E5A91 /* ConnexionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnexionController.swift; sourceTree = "<group>"; };
 		B3ADFB6C1C9B1EF2008E5A91 /* Identification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Identification.swift; sourceTree = "<group>"; };
@@ -139,7 +139,6 @@
 				F21B673B1CAD891300B76333 /* GestionInscription.swift */,
 				F28D80781C8F494A00DF0D4E /* ListeCategorieTableViewController.swift */,
 				F28D807A1C8F53CE00DF0D4E /* ListeParCategorieController.swift */,
-				B3A66BBB1C91F80A003ED901 /* BDDCache.swift */,
 				F266E9131C89DCD600F7AC83 /* Assets.xcassets */,
 				F266E9151C89DCD600F7AC83 /* LaunchScreen.storyboard */,
 				F266E9101C89DCD600F7AC83 /* HelpProject.xcdatamodeld */,
@@ -155,6 +154,7 @@
 				B38654E31CA5DE2700AB410D /* VoirReponseController.swift */,
 				B38654E51CA5E0AA00AB410D /* RepondreController.swift */,
 				B37D64961CAD828A00B54875 /* AttenteNotationController.swift */,
+				B35549841CAEF16D005B5936 /* readme */,
 			);
 			path = HelpProject;
 			sourceTree = "<group>";
@@ -281,6 +281,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B35549851CAEF16D005B5936 /* readme in Resources */,
 				F266E9171C89DCD600F7AC83 /* LaunchScreen.storyboard in Resources */,
 				F266E9141C89DCD600F7AC83 /* Assets.xcassets in Resources */,
 				F266E90F1C89DCD600F7AC83 /* Main.storyboard in Resources */,
@@ -322,7 +323,6 @@
 				B33310701C99D3D3009298E2 /* OffreDemandeController.swift in Sources */,
 				B33310721C99DCBA009298E2 /* ProfilControler.swift in Sources */,
 				B38654E21CA5D92A00AB410D /* ListeReponsesController.swift in Sources */,
-				B3A66BBC1C91F80A003ED901 /* BDDCache.swift in Sources */,
 				B3A66BBE1C91FD85003ED901 /* BDDTableViewController.swift in Sources */,
 				F266E90A1C89DCD600F7AC83 /* AppDelegate.swift in Sources */,
 				B37D64971CAD828A00B54875 /* AttenteNotationController.swift in Sources */,

@@ -4,6 +4,7 @@
 //
 //  Created by leo on 22/03/2016.
 //  Copyright © 2016 del_leo. All rights reserved.
+/*Permet de créer un nouveau service*/
 //
 import UIKit
 import CoreData

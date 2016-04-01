@@ -4,6 +4,9 @@
 //
 //  Created by tp on 31/03/2016.
 //  Copyright © 2016 del_leo. All rights reserved.
+/*
+Permet l'inscription d'une personne
+*/
 //
 
 import UIKit
@@ -36,7 +39,6 @@ class GestionInscription: UIViewController {
             let dvc=segue.destinationViewController as! ListeCategorieTableViewController
             dvc.identification=Identification(login:login!.text!,password:passOne!.text!,id:idPerson)
             
-            //dvc.boutonConnection.setTitle("Se déconnecter",forState: UIControlState.Normal)
         }
     }
     var idPerson=0
@@ -57,13 +59,7 @@ class GestionInscription: UIViewController {
         
         
         
-        //var addressPerson = ""
         
-        /*addressPerson += numRue.text!
-        addressPerson += " "
-        addressPerson += nomRue.text!
-        addressPerson += codePostal.text!
-        */
         
         
         

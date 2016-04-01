@@ -4,6 +4,9 @@
 //
 //  Created by leo on 17/03/2016.
 //  Copyright © 2016 del_leo. All rights reserved.
+/*
+Stocke une identification
+*/
 //
 
 import UIKit

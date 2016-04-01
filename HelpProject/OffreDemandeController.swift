@@ -5,7 +5,7 @@
 //  Created by leo on 16/03/2016.
 //  Copyright © 2016 del_leo. All rights reserved.
 /*
-Permet de visualiser un Service
+Permet de visualiser un Service, de commenter et de voir les réponses
 
 */
 //
