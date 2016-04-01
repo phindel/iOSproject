@@ -805,16 +805,6 @@
                                     <rect key="frame" x="114" y="126" width="266" height="51"/>
                                 </variation>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gmc-Yo-gqy">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <state key="normal" title="Répondre"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="33" y="80" width="102" height="30"/>
-                                </variation>
-                                <connections>
-                                    <segue destination="bpm-s7-MVy" kind="show" identifier="repondre" id="G6X-he-DWY"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5d3-YY-sDH">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <state key="normal" title="Voir les reponses"/>
@@ -840,6 +830,16 @@
                                     <rect key="frame" x="20" y="305" width="354" height="51"/>
                                 </variation>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gmc-Yo-gqy">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Répondre"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="33" y="80" width="102" height="30"/>
+                                </variation>
+                                <connections>
+                                    <segue destination="bpm-s7-MVy" kind="show" identifier="repondre" id="G6X-he-DWY"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -859,10 +859,10 @@
                                 <exclude reference="VdV-CL-10a"/>
                                 <exclude reference="k00-Se-QaA"/>
                                 <exclude reference="maz-mr-JMS"/>
-                                <exclude reference="gmc-Yo-gqy"/>
                                 <exclude reference="5d3-YY-sDH"/>
                                 <exclude reference="d9Z-lh-wHc"/>
                                 <exclude reference="7i3-Ez-4W5"/>
+                                <exclude reference="gmc-Yo-gqy"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="1bF-g9-06C"/>
@@ -882,10 +882,10 @@
                                 <include reference="VdV-CL-10a"/>
                                 <include reference="k00-Se-QaA"/>
                                 <include reference="maz-mr-JMS"/>
-                                <include reference="gmc-Yo-gqy"/>
                                 <include reference="5d3-YY-sDH"/>
                                 <include reference="d9Z-lh-wHc"/>
                                 <include reference="7i3-Ez-4W5"/>
+                                <include reference="gmc-Yo-gqy"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="1bF-g9-06C"/>
@@ -900,6 +900,8 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="boutonRepondre" destination="gmc-Yo-gqy" id="6sF-Op-qpl"/>
+                        <outlet property="boutonVoirReponses" destination="5d3-YY-sDH" id="Ixn-7P-KsZ"/>
                         <outlet property="budgetA_O" destination="7i3-Ez-4W5" id="Jxb-xu-AWZ"/>
                         <outlet property="datePubA_O" destination="11E-GF-NkY" id="WKc-9O-KFk"/>
                         <outlet property="descriptionA_O" destination="VdV-CL-10a" id="lfT-9v-Nv4"/>

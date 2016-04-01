@@ -13,6 +13,9 @@ import MapKit
 class OffreDemandeController: UIViewController, MKMapViewDelegate{
     var identification: Identification!
     var idService:Int!
+    
+    @IBOutlet weak var boutonVoirReponses: UIButton!
+    @IBOutlet weak var boutonRepondre: UIButton!
     @IBOutlet weak var localisationOnMap: MKMapView!
     
     @IBOutlet weak var libelleA_O: UILabel!
@@ -38,8 +41,8 @@ class OffreDemandeController: UIViewController, MKMapViewDelegate{
         let contexte:NSManagedObjectContext=appDel.managedObjectContext
         let req=NSFetchRequest(entityName: "Service")
         req.returnsObjectsAsFaults=false
-        
-        
+        boutonVoirReponses.enabled=identification != nil
+        boutonRepondre.enabled=identification != nil
         
         req.predicate=NSPredicate(format: "idService = %@", NSString(format:"%d",idService))
         
