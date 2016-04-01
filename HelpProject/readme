@@ -2,6 +2,7 @@
 Pour peupler la base de donnée, cliquer sur "Remplir BDD"
 Ceci crée, entre autres, un utilisateur "a" (mot de passe "a") en lui donnant une note et des catégories.
 Il faut rafraichir la liste ensuite
+L'utilisateur peut avoir accès à des éléments sans se connecter (mais pas à tous)
 
 Vue initiale: ListeCategorieTableViewController
 
